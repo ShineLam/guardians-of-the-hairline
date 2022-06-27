@@ -1,0 +1,79 @@
+@import '/styles/default.wxss';
+
+/* 键盘 */
+.kb {
+  background-color: #F2F2F5;
+  padding: 16rpx 0 0 10rpx;
+}
+
+.kb .btn {
+  width: 168rpx;
+  height: 92rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #393b3f;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 6rpx;
+  margin: 0 16rpx 16rpx 0;
+}
+
+.kb .img {
+  width: 48rpx;
+  height: 30rpx;
+}
+
+.done-btn .btn {
+  width: 168rpx;
+  height: 306rpx;
+  line-height: 306rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background: #2AA371;
+}
+
+/*  */
+
+.inp {
+  height: 100rpx;
+  font-size: 60rpx;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 16rpx 0 16rpx 46rpx;
+}
+
+.code-inp .vw {
+  height: 76rpx;
+  line-height: 76rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.code-inp .vw + .vw {
+  margin-left: 30rpx;
+}
+
+.ico-for-btn {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 16rpx;
+}
+
+.lft-arr::after {
+  top: -8rpx;
+  left: 8rpx;
+}
+
+.btn.bor {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 32rpx;
+  border-radius: 44rpx;
+  padding: 20rpx 0;
+  margin: 24rpx auto;
+}
+
+.btn.sub.bor {
+  color: #2AA371;
+  border: 1rpx solid #2AA371;
+  background: #fff;
+}

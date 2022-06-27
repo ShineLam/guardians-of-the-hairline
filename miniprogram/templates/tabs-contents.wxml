@@ -1,0 +1,17 @@
+<!-- Tab页-home内容组件 -->
+<template name="tab-home">
+  <admin-home id="admin"  class=".tabcontent" wx:if="{{admin}}"></admin-home>
+  <visor-home id="visor"  class=".tabcontent" wx:if="{{visor}}"></visor-home>
+</template>
+
+<!-- Tab页-data内容组件 -->
+<template name="tab-data">
+  <admin-data id="admin"  class=".tabcontent" wx:if="{{admin}}"></admin-data>
+  <visor-data id="visor"  class=".tabcontent" wx:if="{{visor}}"></visor-data>
+</template>
+
+<!-- Tab页-profile内容组件 -->
+<template name="tab-profile">
+  <admin-profile id="admin"  class=".tabcontent" wx:if="{{admin}}"></admin-profile>
+  <visor-profile id="visor"  class=".tabcontent" wx:if="{{visor}}"></visor-profile>
+</template>

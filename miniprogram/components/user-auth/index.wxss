@@ -1,0 +1,16 @@
+/* 统一公共授权组件 */
+@import '/styles/default.wxss';
+
+.auth-wrap {
+  padding: 60rpx;
+  text-align: center;
+}
+
+.auth-img {
+  width: 410rpx;
+  height: 264rpx;
+}
+
+.auth-wrap .btn {
+  padding: 20rpx 0;
+}

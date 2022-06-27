@@ -1,0 +1,94 @@
+.wrap {
+  box-shadow: 0 2rpx 4rpx 0 rgba(147, 153, 150, 1);
+}
+
+.kb,
+.kb-pro {
+  font-size: 32rpx;
+  text-align: center;
+  background: #F3F5F4;
+  padding: 16rpx 14rpx 12rpx;
+}
+
+.kb .btn,
+.kb-pro .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9%;
+  height: 84rpx;
+  line-height: 84rpx;
+  font-weight: 500;
+  color: #393b3f;
+  background: #fff;
+  box-shadow: 0 2rpx 4rpx 0 rgba(147, 153, 150, 1);
+  border-radius: 8rpx;
+  border: 0;
+  margin: 0 .5% 10rpx;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.kb-pro>.vw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hover-class {
+  background: rgba(70, 48, 48, 0.5) !important;
+}
+
+/* 删除按钮 */
+.btn-del {
+  width: 130rpx !important;
+  height: 84rpx;
+  background: #F0F0F0 !important;
+  box-shadow: 0 2rpx 4rpx 0 rgba(147, 153, 150, 1);
+}
+
+.btn-del.ab {
+  position: absolute;
+  right: 14rpx;
+  bottom: 20rpx;
+}
+
+.btn-del.hover-class {
+  background: rgba(173, 180, 189, 0.5) !important;
+}
+
+.ico-del {
+  width: 76rpx;
+  height: 26rpx;
+}
+
+/* 车牌输入框 */
+.input-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-area .vw {
+  width: 72rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 48rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  background: #F3F5F4;
+}
+
+.input-area .vw+.vw {
+  margin-left: 8rpx;
+}
+
+.input-area .active {
+  border: 1rpx solid #2AA371;
+}
+
+.input-area .new-energy {
+  font-size: 22rpx;
+  color: #14C77C;
+  background: rgba(20, 199, 124, 0.08);
+}

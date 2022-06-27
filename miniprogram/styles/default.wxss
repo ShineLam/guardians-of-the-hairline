@@ -1,0 +1,223 @@
+/* 
+ * 此文件用于写公用样式
+ * 切记不能用标签/ID/属性选择器
+ * 因为此文件要被组件所引用, 小程序组件样式不允许使用上述三种选择器
+*/
+
+/* flex */
+
+.fx {
+  display: flex !important;
+  align-items: center;
+}
+
+.fx-one>.vw {
+  flex: 1;
+}
+
+.jc-sb {
+  justify-content: space-between !important;
+}
+
+.jc-sr {
+  justify-content: space-around !important;
+}
+
+.jc-cnt {
+  justify-content: center !important;
+}
+
+.jc-fs {
+  justify-content: flex-start !important;
+}
+
+.jc-fe {
+  justify-content: flex-end !important;
+}
+
+.ai-fs {
+  align-items: flex-start !important;
+}
+
+.ai-fe {
+  align-items: flex-end !important;
+}
+
+.fd-cl {
+  flex-direction: column !important;
+}
+
+.fw {
+  flex-wrap: wrap !important;
+}
+
+/* 容器 */
+.wrap {}
+
+.pr {
+  position: relative;
+}
+
+.wt {
+  width: 100% !important;
+}
+
+/* 文本 */
+
+.txt-cnt {
+  text-align: center;
+}
+
+.txt-rgt {
+  text-align: right;
+}
+
+.txt-lft {
+  text-align: left;
+}
+
+.txt-of {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 边框 */
+
+.b-b {}
+
+
+/* 圆角 */
+
+/* 头像 */
+
+.avatar {
+
+}
+
+
+/* 箭头/三角形 */
+
+.tri,
+.up-arr,
+.down-arr,
+.rgt-arr {
+  position: relative;
+}
+
+.up-arr::after,
+.down-arr::after,
+.rgt-arr::after {
+  content: "";
+  width: 10rpx;
+  height: 10rpx;
+  border-right: 1px solid #939996;
+  border-bottom: 1px solid #939996;
+  transition: all 0.3s;
+  position: absolute;
+}
+
+.down-arr::after {
+  transform: rotate(405deg);
+  right: -20rpx;
+  top: 28%;
+}
+
+.up-arr::after {
+  transform: rotate(226deg);
+  right: -20rpx;
+  top: 38%;
+}
+
+.rgt-arr::after {
+  transform: rotate(316deg);
+  right: -20rpx;
+  top: 38%;
+}
+
+.r-12::after {
+  right: 12rpx;
+}
+
+.r-32::after {
+  right: 32rpx;
+}
+
+.tri::after {
+  content: '';
+  width: 0;
+  border-left: 6rpx solid transparent;
+  border-right: 6rpx solid transparent;
+  border-top: 6rpx solid #3C4743;
+  transition: all 0.3s;
+  position: absolute;
+  top: 45%;
+  right: -24rpx;
+}
+
+.tri.up::after {
+  transform: rotate(226reg);
+}
+
+/* 遮罩 */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 600;
+  left: 0;
+  top: 0;
+}
+
+/* 标签 */
+
+
+/* 重置 */
+.no-sd {
+  box-shadow: none !important;
+}
+
+.no-bg {
+  background: none !important;
+}
+
+.no-data {
+  display: block;
+  width: 280rpx;
+  height: 280rpx;
+  margin: 20vh auto 0;
+}
+
+
+/* 图标 */
+
+
+/* 操作浮窗 */
+
+.action-box {
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 16rpx;
+  background: #fff;
+  box-shadow: 0 8rpx 20rpx 0 rgba(4, 31, 19, 0.08);
+  padding: 0 24rpx;
+  position: absolute;
+  right: -80rpx;
+  top: -28rpx;
+  z-index: 601;
+}
+
+.action-box>.vw {
+  padding: 24rpx 0;
+}
+
+.op-7 {
+  opacity: 0.7;
+}
+
+.op-9 {
+  opacity: 0.9;
+}

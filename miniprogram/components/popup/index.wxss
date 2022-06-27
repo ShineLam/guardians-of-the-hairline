@@ -1,0 +1,72 @@
+@import '/styles/default.wxss';
+
+.pop-up {
+  width: 100%;
+  min-height: 380rpx;
+  background: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 601;
+  -webkit-overflow-scrolling: touch;
+  transform: rotate(0deg) scale(1) translate(0%, 100%);
+  -webkit-transform: rotate(0deg) scale(1) translate(0%, 100%);
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+.pop-up-enter {
+  transform: rotate(0deg) scale(1) translate(0%, 0%) !important;
+  -webkit-transform: rotate(0deg) scale(1) translate(0%, 0%) !important;
+}
+
+.pop-up-exit {
+  transform: rotate(0deg) scale(1) translate(0%, 100%);
+  -webkit-transform: rotate(0deg) scale(1) translate(0%, 100%);
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 600;
+  left: 0;
+  top: 0;
+}
+
+.ico-close {
+  position: absolute;
+  top: 32rpx;
+  right: 32rpx;
+}
+
+.ico-close .img {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.sv {
+  height: 638rpx;
+}
+
+.chk-box {
+  padding-bottom: 220rpx;
+}
+
+.chk-box .vw {
+  display: block;
+}
+
+.chk-cfm-wrap {
+  box-sizing: border-box;
+  width: 100vw;
+  background: #fff;
+  box-shadow: 0px -2rpx 0px 0px rgba(235, 237, 236, 1);
+  padding: 24rpx 32rpx 32rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

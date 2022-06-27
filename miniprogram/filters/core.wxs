@@ -1,0 +1,314 @@
+/**
+ * 基础过滤器
+ */
+
+var IMG_SERVER = "https://test.guardians.com"
+// var IMG_SERVER = "http://dev_ecfu.hsyfun.com:8808"
+
+// 毫秒
+var SEC_MS = 1000
+var MIN_MS = 60 * SEC_MS
+var HOUR_MS = 60 * MIN_MS
+var DAY_MS = 24 * HOUR_MS
+
+// 指定本地图片路径(指定网络路径时使用imgurl)
+var imgpath = function (name, type) {
+  if (name) {
+    if (name.indexOf('://') != -1) {
+      return name
+    } else {
+      var i = !name ? -1 : name.lastIndexOf('imgs/', 9)
+      if (i === 0 || i === 1) {
+        return i ? '/' + name : name
+      } else {
+        return '/images/' + name + '.' + (type || 'png')
+      }
+    }
+  }
+}
+
+// 指定网络图片路径(指定本地路径时使用imgpath)
+var imgurl = function (name, type) {
+  if (name) {
+    if (name.indexOf('://') != -1) {
+      return name
+    } else {
+      // 固定网络图片路径
+      return IMG_SERVER + '/static/' + name + '.' + (type || 'png')
+    }
+  }
+}
+
+// 发际线类型
+var hairline_enums = [0, 'M型', 1, '圆形', 2, '方形']
+
+// 是否为日期对象
+function isdate(val) {
+  return val && val.constructor === 'Date'
+}
+
+// 空值转换
+function nullif(val, v) {
+  return val == null ? v : val
+}
+
+// 截取子字符串并转换为int
+function subint(val, i, count) {
+  return (val.substring(i, i + count) - 0)
+}
+
+// 转换为int
+function toInt(val, def) {
+  return val == null || val === '' ? (def || 0) : (typeof (val) === 'number' ? val : parseInt(val, 10))
+}
+
+// 转换为字符串
+function toStr(val, def) {
+  return val == null ? def : val.toString()
+}
+
+// 转换为日期
+function toDate(val) {
+  if (val) {
+    if (isdate(val)) {
+      return val
+    } else {
+      var len = (val = val.toString()).length
+      if (len === 'yyyy-MM-dd HH:mm:ss'.length) {
+        return getDate(subint(val, 0, 4), subint(val, 5, 2) - 1, subint(val, 8, 2), subint(val, 11, 2), subint(val, 14, 2), subint(val, 17, 2))
+      } else if (len === 'yyyy-MM-dd'.length) {
+        return getDate(subint(val, 0, 4), subint(val, 5, 2) - 1, subint(val, 8, 2))
+      } else if (len === 'yyyy-MM-dd HH:mm:ss.SSS'.length) {
+        return getDate(subint(val, 0, 4), subint(val, 5, 2) - 1, subint(val, 8, 2), subint(val, 11, 2), subint(val, 14, 2), subint(val, 17, 2), subint(val, 20, 3))
+      } else if (len === 'yyyyMMdd'.length) {
+        return getDate(subint(val, 0, 4), subint(val, 4, 2) - 1, subint(val, 6, 2))
+      } else if (len === 'yyyyMMddHHmmss'.length) {
+        return getDate(subint(val, 0, 4), subint(val, 4, 2) - 1, subint(val, 6, 2), subint(val, 8, 2), subint(val, 10, 2), subint(val, 12, 2))
+      } else {
+        return val
+      }
+    }
+  }
+}
+
+// 日期转换为字符串
+function toStrdate(date, fmt) {
+  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+}
+
+// 敏感数据过滤
+function mask(val) {
+  if (val) {
+    if (typeof val !== 'string') {
+      val = String(val)
+    }
+    var len = val.length
+    var i = len <= 1 ? 0 : (len <= 3 ? 1 : (len <= 6 ? 2 : (len <= 11 ? 3 : 4)))
+    var c = len <= 2 ? 0 : (len <= 4 ? 1 : (len <= 8 ? 2 : (len <= 10 ? 3 : 4)))
+    var m = len - i - c
+    val = val.substring(0, i) + '****************'.substring(0, m > 0 ? m : 0) + (len < c ? '' : val.substring(len - c))
+  }
+  return val
+}
+
+function trimleft(val, char) {
+  if (val) {
+    if (!char) {
+      return val.trim()
+    }
+    var i = -1
+    while (i < val.length && val.charAt(++i) == char);
+    return i == 0 ? val : val.substring(i)
+  }
+  return val
+}
+
+// 位包含
+function idxin(idx, bits) {
+  return bits && idx && idx > 0 && ((1 << (idx - 1)) & bits) != 0
+}
+
+// 连接字符串
+function join(s, v1, v2, v3, v4) {
+  var buf = []
+  if (v1 !== null && v1 !== undefined && v1 !== '') {
+    buf.push(v1)
+  }
+  if (v2 !== null && v2 !== undefined && v2 !== '') {
+    buf.push(v2)
+  }
+  if (v3 !== null && v3 !== undefined && v3 !== '') {
+    buf.push(v3)
+  }
+  if (v4 !== null && v4 !== undefined && v4 !== '') {
+    buf.push(v4)
+  }
+  return buf.join(s)
+}
+
+// 日期格式(val: yyyy-MM-dd HH:mm:ss)
+var fmts = {
+  'yyyy-MM-dd': function (val) {
+    return val.substring(0, 10)
+  },
+  'MM 月 dd 日': function (val) {
+    return val.substring(5, 7) + ' 月 ' + val.substring(8, 10) + '日'
+  },
+  'yyyy年MM月dd日': function (val) {
+    // 2020-02-01
+    return val.substring(0, 4) + '年' + val.substring(5, 7) + '月' + val.substring(8, 10) + '日'
+  },
+  'M月d日': function (val) {
+    return trimleft(val.substring(5, 7), '0') + '月' + trimleft(val.substring(8, 10), '0') + '日'
+  },
+  'H:mm:ss': function (val) {
+    return trimleft(val.substring(11, 13), '0') + ':' + val.substring(14, 16) + ':' + val.substring(17, 19)
+  },
+  'H:mm': function (val) {
+    return trimleft(val.substring(11, 13), '0') + ':' + val.substring(14, 16)
+  }
+}
+
+// 转换值为'yyyy-MM-dd HH:mm:ss' 格式
+function toFullDateStr(val) {
+  return val
+}
+
+// 日期格式化(简单实现)
+function fmdate(val, fmt) {
+  if (val && fmt) {
+    var fn = fmts[fmt]
+    return fn ? fn(toFullDateStr(val)) : val
+  }
+}
+
+// 数字格式化(按千分隔)
+function fmnum(val) {
+  var tmp = val
+  if (val) {
+    val = (val - 0).toString()
+    if (val !== 'NaN') {
+      var dot = val.lastIndexOf('.')
+      var len = 0
+      if (dot >= 0) {
+        tmp = val.substring(dot)
+        val = val.substring(0, dot)
+      } else {
+        tmp = ''
+      }
+      while ((len = val.length) > 3) {
+        tmp = ',' + val.substring(len - 3) + tmp
+        val = val.substring(0, len - 3)
+      }
+      tmp = val + tmp
+    }
+  }
+  return tmp
+}
+
+// 除/模计算
+function dmod(ts, per, mod1, mod2, mod3) {
+  if (mod3) {
+    return Math.floor((((ts % mod1) % mod2) % mod3) / per)
+  } else if (mod2) {
+    return Math.floor(((ts % mod1) % mod2) / per)
+  } else if (mod1) {
+    return Math.floor((ts % mod1) / per)
+  } else {
+    return Math.floor(ts / per)
+  }
+}
+
+// 连接时间
+function jointimestr(d, h, m, s) {
+  if (d == 0) {
+    return h == 0 ? (m == 0 ? (s + '秒') : (m + '分' + s + '秒')) : (h + '小时' + m + '分' + s + '秒')
+  } else {
+    return d + '天' + h + '小时' + m + '分' + s + '秒'
+  }
+}
+
+// 时间差
+function difftime(val1, val2, unit) {
+  if (val1 && val2) {
+    var ts = Math.abs(toDate(val1).getTime() - toDate(val2).getTime())
+    if (unit === 'dhms') { // 3天8小时35分45秒
+      return jointimestr(
+        dmod(ts, DAY_MS),
+        dmod(ts, HOUR_MS, DAY_MS),
+        dmod(ts, MIN_MS, DAY_MS, HOUR_MS),
+        dmod(ts, SEC_MS, DAY_MS, HOUR_MS, MIN_MS))
+    } else if (unit === 'hms') { // 8小时35分45秒
+      return jointimestr(
+        0,
+        dmod(ts, HOUR_MS),
+        dmod(ts, MIN_MS, HOUR_MS),
+        dmod(ts, SEC_MS, HOUR_MS, MIN_MS))
+    } else if (unit === 'hm') { // 8小时35分
+      var h = Math.floor(ts / HOUR_MS)
+      var m = Math.floor((ts % HOUR_MS) / MIN_MS)
+      return h == 0 ? (m + '分钟') : (h + '小时' + m + '分')
+    } else if (unit === 's') {
+      return Math.floor(ts / SEC_MS)
+    } else if (unit == 'm') {
+      return Math.floor(ts / MIN_MS)
+    } else if (unit == 'h') {
+      return Math.floor(ts / HOUR_MS)
+    } else if (unit == 'd') {
+      return Math.floor(ts / DAY_MS)
+    } else {
+      return ts
+    }
+  }
+}
+
+// 遍历查找
+function for_mapping(val, enums) {
+  var len = enums.length;
+  for (var i = 0; i < len; i++) if (enums[i++] == val) return enums[i];
+}
+
+// 二分查找(要求enums必须已排序)
+function bin_mapping(val, enums) {
+  var fm = 0, to = (enums.length >>> 1) - 1, i, e;
+  while (to >= fm) {
+    i = ((to + fm) >>> 1)
+    e = enums[2 * i];
+    if (e == val) {
+      return enums[2 * i + 1]
+    } else {
+      if (val > e) {
+        fm = i + 1;
+      } else {
+        to = i - 1
+      }
+    }
+  }
+}
+
+// 发际线类型
+function hairlineType(val) {
+  return hairline_enums[val - 0] || '未知'
+  // return (val !== null && bin_mapping(val, hairline_enums)) || '未定义' // 下标与数组顺序不同适用
+}
+
+// 测试方法
+function test(val) {
+}
+
+// 导出
+module.exports = {
+  test: test,
+  // 公共
+  isdate: isdate,
+  imgpath: imgpath,
+  imgurl: imgurl,
+  mask: mask,
+  idxin: idxin,
+  join: join,
+  fmdate: fmdate,
+  fmnum: fmnum,
+  difftime: difftime,
+  // 枚举
+  hairlineType: hairlineType
+}

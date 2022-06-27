@@ -1,8 +1,8 @@
-// index.js
-// const app = getApp()
-const { envList } = require('../../envList.js');
 
-Page({
+const { envList } = require('../../envList.js');
+const { mixin, api, util, conf } = require('../../utils/mixin.js')
+
+Page(mixin.page({
   data: {
     showUploadTip: false,
     powerList: [{
@@ -16,14 +16,14 @@ Page({
       //  {
       //   title: '微信支付'
       // },
-       {
+      {
         title: '生成小程序码',
         page: 'getMiniProgramCode'
       },
-      // {
-      //   title: '发送订阅消息',
-      // }
-    ]
+        // {
+        //   title: '发送订阅消息',
+        // }
+      ]
     }, {
       title: '数据库',
       tip: '安全稳定的文档型数据库',
@@ -82,7 +82,7 @@ Page({
       success: (res) => {
         this.onChangeSelectedEnv(res.tapIndex);
       },
-      fail (res) {
+      fail(res) {
         console.log(res.errMsg);
       }
     });
@@ -138,5 +138,13 @@ Page({
       });
       wx.hideLoading();
     });
+  },
+
+  on2() {
+    util.navNext('core-prod-index')
+    // wx.navigateTo({url:'/pages/modules/core/prod/core-prod-index'})
+  },
+  onLoad() {
+    util.navNext('tab-home')
   }
-});
+}))

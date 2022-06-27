@@ -1,0 +1,1 @@
+<core-profile id="core" class=".tabcontent" wx:if="{{core}}"></core-profile>

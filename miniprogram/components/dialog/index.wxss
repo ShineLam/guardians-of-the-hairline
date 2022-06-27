@@ -1,0 +1,71 @@
+@import '/styles/default.wxss';
+
+/* 自定义弹窗 */
+
+.pop {
+  width: 80%;
+  background: #fff;
+  border-radius: 12rpx;
+  margin: auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 20vh;
+  opacity: 0;
+  overflow: hidden;
+  transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transition: All 0.2s ease;
+  -webkit-transition: All 0.2s ease;
+}
+
+.pop-s {
+  top: 30%;
+}
+
+.pop-enter {
+  opacity: 1;
+  transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  z-index: 1000;
+}
+
+.pop .fnt {
+  background: #f8f8f8;
+  padding: 36rpx 40rpx 32rpx;
+}
+
+.pop-btn {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #f6f6f6;
+}
+
+.pop-btn > .vw {
+  flex: 1;
+  text-align: center;
+  padding: 30rpx;
+}
+
+.pop-btn > .vw + .vw {
+  border-left: 1px solid #f6f6f6;
+}
+
+.pop-btn > .vw:last-of-type {
+  color: #2AA371;
+}
+
+.ico-close {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+
+.ico-close .img {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.mask {
+  z-index: 700;
+}

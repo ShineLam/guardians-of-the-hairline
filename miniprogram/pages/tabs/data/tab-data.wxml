@@ -1,0 +1,2 @@
+<!-- -->
+<core-data id="core" class=".tabcontent" wx:if="{{core}}"></core-data>
