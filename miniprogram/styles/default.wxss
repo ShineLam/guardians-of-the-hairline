@@ -172,9 +172,6 @@
   top: 0;
 }
 
-/* 标签 */
-
-
 /* 重置 */
 .no-sd {
   box-shadow: none !important;
@@ -189,35 +186,4 @@
   width: 280rpx;
   height: 280rpx;
   margin: 20vh auto 0;
-}
-
-
-/* 图标 */
-
-
-/* 操作浮窗 */
-
-.action-box {
-  font-size: 28rpx;
-  text-align: center;
-  border-radius: 16rpx;
-  background: #fff;
-  box-shadow: 0 8rpx 20rpx 0 rgba(4, 31, 19, 0.08);
-  padding: 0 24rpx;
-  position: absolute;
-  right: -80rpx;
-  top: -28rpx;
-  z-index: 601;
-}
-
-.action-box>.vw {
-  padding: 24rpx 0;
-}
-
-.op-7 {
-  opacity: 0.7;
-}
-
-.op-9 {
-  opacity: 0.9;
 }

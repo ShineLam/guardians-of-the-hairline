@@ -24,6 +24,39 @@
     "navigationBarTitleText": "Guardians",
     "navigationBarTextStyle": "black"
   },
+  "usingComponents": {
+    "custom-tab-bar": "/custom-tab-bar/index",
+    "core-home": "/pages/modules/core/tabs/core-home",
+    "core-data": "/pages/modules/core/tabs/core-data",
+    "core-profile": "/pages/modules/core/tabs/core-profile",
+    "admin-home": "/pages/modules/admin/tabs/admin-home",
+    "admin-data": "/pages/modules/admin/tabs/admin-data",
+    "admin-profile": "/pages/modules/admin/tabs/admin-profile"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#221F1F",
+    "selectedColor": "#CC2B22",
+    "list": [{
+        "pagePath": "pages/tabs/home/tab-home",
+        "iconPath": "/images/tab-home.png",
+        "selectedIconPath": "/images/tab-home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabs/data/tab-data",
+        "iconPath": "/images/tab-data.png",
+        "selectedIconPath": "/images/tab-data.png",
+        "text": "数据"
+      },
+      {
+        "pagePath": "pages/tabs/profile/tab-profile",
+        "iconPath": "/images/tab-profile.png",
+        "selectedIconPath": "/images/tab-profile.png",
+        "text": "设置"
+      }
+    ]
+  },
   "lazyCodeLoading": "requiredComponents",
   "sitemapLocation": "sitemap.json",
   "style": "v2"

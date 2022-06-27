@@ -1,2 +1,3 @@
 <!-- -->
 <core-data id="core" class=".tabcontent" wx:if="{{core}}"></core-data>
+<admin-data id="admin" class=".tabcontent" wx:if="{{admin}}"></admin-data>

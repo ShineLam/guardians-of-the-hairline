@@ -1,5 +1,5 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
 
 <view>
- profile
+  THIS IS CORE PROFILE
 </view>

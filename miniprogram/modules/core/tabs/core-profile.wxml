@@ -1,0 +1,5 @@
+<wxs src="../../../../filters/core.wxs" module="f" />
+
+<view>
+ profile
+</view>

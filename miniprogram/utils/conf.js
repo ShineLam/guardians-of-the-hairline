@@ -3,7 +3,7 @@ const API_HOST = 'https://test.guardians.com'
 const IMG_HOST = API_HOST
 
 // 接口地址前缀
-const API_URL_PREFIX = API_HOST 
+const API_URL_PREFIX = API_HOST
 
 // 应用别名
 const APP_ALIAS = 'guardians'
@@ -24,43 +24,43 @@ const PARAM_TABARID_NAME = 'tabarId'
 // TabBar定义(应与app.json中定义的tabBar保持一致)
 const APP_TAB_BAR = {
   custom: true, // 开启/关闭自定义tabbar
-  list: [{
-      "pagePath": "pages/tabs/home/tab-home",
-      "iconPath": "/imgs/tab-home.png",
-      "selectedIconPath": "/imgs/tab-home-act.png",
-      "text": "首页",
-      "color": '#939996',
-      "selectedColor": '#2AA371'
-    },
-    {
-      "pagePath": "pages/tabs/data/tab-data",
-      "iconPath": "/imgs/tab-chart.png",
-      "selectedIconPath": "/imgs/tab-chart-act.png",
-      "text": "数据",
-      "color": '#939996',
-      "selectedColor": '#2AA371'
-    },
-    {
-      "pagePath": "pages/tabs/profile/tab-profile",
-      "iconPath": "/imgs/tab-my.png",
-      "selectedIconPath": "/imgs/tab-my-act.png",
-      "text": "设置",
-      "color": '#939996',
-      "selectedColor": '#2AA371'
-    }
+  "color": "#221F1F",
+  "selectedColor": "#CC2B22",
+  "list": [{
+    "pagePath": "pages/tabs/home/tab-home",
+    "iconPath": "/images/tab-home.png",
+    "selectedIconPath": "/images/tab-home.png",
+    "text": "首页"
+  },
+  {
+    "pagePath": "pages/tabs/data/tab-data",
+    "iconPath": "/images/tab-data.png",
+    "selectedIconPath": "/images/tab-data.png",
+    "text": "数据"
+  },
+  {
+    "pagePath": "pages/tabs/profile/tab-profile",
+    "iconPath": "/images/tab-profile.png",
+    "selectedIconPath": "/images/tab-profile.png",
+    "text": "设置"
+  }
   ]
 }
 
-// TabBar定义.管理员
+// TabBar定义
 const TABS_core = [{
   text: '首页'
+}, {
+  text: '列表'
 }, {
   text: '我的'
 }]
 
-// TabBar定义.路保/监管
-const TABS_worker   = [{
+// TabBar定义.管理端
+const TABS_admin = [{
   text: '首页'
+}, {
+  show: false
 }, {
   text: '我的'
 }]
@@ -68,7 +68,7 @@ const TABS_worker   = [{
 // 应用菜单
 const TABS = {
   core: TABS_core,
-  worker: TABS_worker,
+  admin: TABS_admin,
 }
 
 // 获取全局数据
@@ -101,7 +101,7 @@ const getTabarId = (def) => {
 const setTabarId = (id) => {
   if (id in TABS) { // 必须定义的ID才允许设置
     setGlobal(PARAM_TABARID_NAME, id || '')
-    wx.setStorage({key: KEY_TABAR_ID, data: id})
+    wx.setStorage({ key: KEY_TABAR_ID, data: id })
     return true
   } else {
     console.log('【应用配置】 tabarId未定义:', id)

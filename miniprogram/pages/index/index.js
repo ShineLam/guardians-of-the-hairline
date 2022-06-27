@@ -145,6 +145,6 @@ Page(mixin.page({
     // wx.navigateTo({url:'/pages/modules/core/prod/core-prod-index'})
   },
   onLoad() {
-    util.navNext('tab-home')
+    util.navNext('tab-home', { tabarId: 'core' })
   }
 }))

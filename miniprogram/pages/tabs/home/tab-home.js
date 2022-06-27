@@ -6,6 +6,6 @@ Page(mixin.tabpage({
 
   },
   onShow() {
-    // util.navNext('tab-home', { tabarId: itm.id })
+    
   }
 }))

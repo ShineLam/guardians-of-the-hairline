@@ -1,4 +1,3 @@
 <!--  -->
-<!-- <core-home id="core" class=".tabcontent" wx:if="{{core}}"></core-home> -->
-
-<text>tab-home</text>
+<core-home id="core" class=".tabcontent" wx:if="{{core}}"></core-home>
+<admin-home id="admin" class=".tabcontent" wx:if="{{admin}}"></admin-home>

@@ -1,1 +1,2 @@
 <core-profile id="core" class=".tabcontent" wx:if="{{core}}"></core-profile>
+<admin-profile id="admin" class=".tabcontent" wx:if="{{admin}}"></admin-profile>
