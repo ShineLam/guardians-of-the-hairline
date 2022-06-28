@@ -48,6 +48,7 @@
 }
 
 .btn-del.ab {
+  padding: 0;
   position: absolute;
   right: 14rpx;
   bottom: 20rpx;
@@ -58,9 +59,10 @@
 }
 
 .ico-del {
-  width: 76rpx;
-  height: 26rpx;
+  width: 56rpx;
+  height: 56rpx;
 }
+
 
 /* 车牌输入框 */
 .input-area {
@@ -70,25 +72,31 @@
 }
 
 .input-area .vw {
-  width: 72rpx;
-  height: 96rpx;
-  line-height: 96rpx;
-  font-size: 48rpx;
+  width: 68rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  font-size: 34rpx;
+  font-weight: 600;
   text-align: center;
-  border-radius: 8rpx;
-  background: #F3F5F4;
+  border-radius: 6rpx;
+  background: #EAEAEC;
+  position: relative;
+}
+
+.input-area .vw:first-of-type {
+  width: 74rpx;
 }
 
 .input-area .vw+.vw {
-  margin-left: 8rpx;
+  margin-left: auto;
 }
 
 .input-area .active {
-  border: 1rpx solid #2AA371;
+  border: 1rpx solid #2D2D2D;
 }
 
 .input-area .new-energy {
-  font-size: 22rpx;
-  color: #14C77C;
-  background: rgba(20, 199, 124, 0.08);
+  font-size: 20rpx;
+  color: #45B06A;
+  background: #D1FFE1;
 }

@@ -1,5 +1,5 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
 
-<view class="box p-b-100">
+<view class="box">
   THIS IS ADMIN HOME
 </view>

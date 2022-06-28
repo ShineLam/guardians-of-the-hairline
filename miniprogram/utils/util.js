@@ -644,6 +644,46 @@ const mapping = (val, enums) => {
   for (let i = 0, len = enums ? enums.length : 0; i < len; i++) if (enums[i++] == val) return enums[i];
 }
 
+// 创建数组
+const fromto = (from, to, pad0) => {
+  let nums = []
+  for (let i = from; i <= to; i++) {
+    nums.push(pad0 && i < 10 ? '0' + i : i)
+  }
+  return nums
+}
+
+const chooseMedia = (cb) => {
+  wx.chooseMedia({
+    sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有,
+    mediaType: ['image'], // mix 可同时选择图片和视频
+    // sourceType: type,
+    success: res => {
+      // 返回选定照片的本地文件路径列表，imgPath可以作为img标签的src属性显示图片
+      let files = res.tempFiles
+      let path = []
+      files.forEach(file => path.push(file.tempFilePath))
+      console.log('[选中的媒体]', path)
+      cb && cb(path)
+    }
+  })
+}
+
+const setNavTitle = (title) => {
+  wx.setNavigationBarTitle({ title })
+}
+
+const setNavColor = (front, back) => {
+  wx.setNavigationBarColor({
+    backgroundColor: back,
+    frontColor: front,
+    animation: {
+      duration: 400,
+      timingFunc: 'easeIn'
+    }
+  })
+}
+
 
 // 导出
 module.exports = {
@@ -680,5 +720,9 @@ module.exports = {
   scan,
   getLoc,
   startLocUpdateBackground,
-  mapping
+  mapping,
+  fromto,
+  chooseMedia,
+  setNavTitle,
+  setNavColor
 }

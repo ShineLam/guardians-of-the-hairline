@@ -266,7 +266,7 @@ const addMblValidAbility = function (ctx, defMethods) {
     // 请求手机号验证
     openMblValid: function (opts, cb, fb) {
       console.log('【手机验证】 opts: ', opts)
-      let mblValid = this.selectComponent('#mblValid')
+      let mblValid = this.selectComponent('#mbl-valid')
       if (mblValid && typeof (mblValid.open) === 'function') {
         mblValid.open(opts, cb, fb)
       } else {
@@ -358,6 +358,15 @@ const addPageAbility = function (ctx, defMethods) {
           loadMoreData(tabcom, more)
         }
       }
+    },
+    // 获取组件
+    getComponents: function (id) {
+      let ids = [].slice.call(arguments)
+      let coms = []
+      ids.forEach((oneId) => {
+        coms.push(this.selectComponent("#" + oneId))
+      })
+      return coms
     },
     // 生命周期函数--监听页面加载
     onLoad: function (opts) {

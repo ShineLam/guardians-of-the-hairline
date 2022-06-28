@@ -1,12 +1,12 @@
 <wxs src="../../filters/core.wxs" module="f" />
 
-<popup id="popup" bind:popuptap="onPopuptap">
+<popup id="popup">
   <view class='fx jc-fe fw kb num'>
     <block wx:for="{{numArr}}" wx:key="index">
       <button class="btn" data-i="{{item}}" bindtap='_onKey' hover-class="hover-class">{{item}}</button>
     </block>
     <button class='fx jc-cnt btn bg-ad' data-i="-1" bindtap='_onKey' hover-class="hover-class">
-      <image class="ico-del" src="{{f.imgpath('ico-kb-del1')}}"></image>
+      <image class="ico-del" src="{{f.imgpath('ico-del')}}"></image>
     </button>
   </view>
 </popup>

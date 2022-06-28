@@ -26,6 +26,8 @@
   },
   "usingComponents": {
     "custom-tab-bar": "/custom-tab-bar/index",
+    "user-auth": "/components/user-auth/index",
+    "mbl-valid": "/components/mbl-valid/index",
     "core-home": "/pages/modules/core/tabs/core-home",
     "core-data": "/pages/modules/core/tabs/core-data",
     "core-profile": "/pages/modules/core/tabs/core-profile",

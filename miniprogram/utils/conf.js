@@ -51,7 +51,7 @@ const APP_TAB_BAR = {
 const TABS_core = [{
   text: '首页'
 }, {
-  text: '列表'
+  text: '数据'
 }, {
   text: '我的'
 }]

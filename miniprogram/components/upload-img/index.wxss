@@ -1,0 +1,31 @@
+.wrap-upd-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20rpx;
+}
+
+.item-upd-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 194rpx;
+  height: 194rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin: 0 0 24rpx 0;
+}
+
+.upd-img {
+  flex-direction: column;
+  font-size: 26rpx;
+  color: #F14D43;
+  text-align: center;
+  background: rgba(241, 77, 67, 0.1);
+  border: 2rpx dashed rgba(241, 77, 67, 0.2);
+  position: relative;
+}
+
+.ico-upload {
+  width: 72rpx;
+  height: 72rpx;
+}

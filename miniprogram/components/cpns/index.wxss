@@ -1,0 +1,73 @@
+.cpns {
+  height: 100%;
+  max-height: 90vh;
+  color: #303133;
+  background-color: #F8F8F8;
+}
+
+.cpns .naver {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 26rpx;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2rpx 10rpx 0 rgba(202, 202, 202, 0.4);
+  padding: 32rpx 0 22rpx;
+}
+
+.cpns .naver .vw {
+  flex: 1;
+  position: relative;
+  color: #ACB0BF;
+}
+
+.cpns .naver .active::after {
+  content: '';
+  display: block;
+  width: 80rpx;
+  height: 8rpx;
+  border-radius: 4px;
+  background-color: #4D6AFF;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -24rpx;
+}
+
+.cpns .naver .active {
+  color: #393B3F;
+  font-weight: 600;
+}
+
+.cpns .btm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 8rpx 0 rgb(202 202 202 / 40%);
+  background: #fff;
+  padding: 32rpx;
+}
+
+.cpns .btm .vw {
+  height: 82rpx;
+  line-height: 82rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.cpns .btm .btn {
+  width: 224rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 44rpx;
+  padding: 0;
+  margin: 0;
+}
+
+.cpns .sv {
+  height: 600rpx;
+  padding-bottom: 32rpx;
+}

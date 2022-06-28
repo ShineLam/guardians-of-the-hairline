@@ -1,0 +1,146 @@
+.kb {
+  font-size: 32rpx;
+  text-align: center;
+  background: #F3F5F4;
+  padding: 16rpx 14rpx 12rpx;
+}
+
+.kb .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84rpx;
+  line-height: 84rpx;
+  font-weight: 500;
+  color: #393b3f;
+  background: #fff;
+  box-shadow: 0 2rpx 4rpx 0 rgba(147, 153, 150, 1);
+  border-radius: 8rpx;
+  border: 0;
+  margin: 0 .5% 10rpx;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 删除按钮 */
+.btn-del {
+  width: 130rpx !important;
+  height: 84rpx;
+  background: #F0F0F0 !important;
+  box-shadow: 0 2rpx 4rpx 0 rgba(147, 153, 150, 1);
+}
+
+.btn-del.ab {
+  position: absolute;
+  right: 14rpx;
+  bottom: 20rpx;
+}
+
+.btn-del.hover-class {
+  background: rgba(173, 180, 189, 0.5) !important;
+}
+
+.ico-del {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.num {
+  height: 400rpx;
+}
+
+.num .btn {
+  width: 31%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+/*  */
+
+.calc .key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 130rpx;
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #221F1F;
+  text-align: center;
+  border-style: solid;
+  border-width: 0 1rpx 1rpx 0;
+  border-color: rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+
+.calc .keybod {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.keybod .num {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: row;
+}
+
+.itm-10 {
+  grid-column-start: span 2;
+}
+
+.top-opr {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1rpx solid rgba(0, 0, 0, 0.05);
+}
+
+.top-opr .key {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.keybod .oprate {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.keybod .oprate .key,
+.top-opr .key {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.keybod .key.done {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #fff;
+  background: #F0574E;
+}
+
+.btn-oprate {
+  font-size: 24rpx;
+  color: #908F8F;
+  background: #F4F4F4;
+  border-radius: 38rpx;
+  padding: 6rpx 14rpx;
+  margin: 0 6rpx;
+}
+
+.btn-oprate.disc {
+  color: #F14D43;
+  background: rgba(204, 43, 34, 0.1);
+}
+
+.wrap-tips {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left: 40rpx;
+  position: relative;
+  overflow: hidden;
+  margin-top: 24rpx;
+}
+
+.wrap-tips>.vw {
+  color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  position: absolute;
+  right: 40rpx;
+}

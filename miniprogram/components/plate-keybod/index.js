@@ -12,12 +12,12 @@ Component(mixin.component({
 
   },
   data: {
+    numArr,
+    lettArr,
+    provArr,
     str: '',
     max: 8,
-    _cb: null,
-    numArr: numArr,
-    lettArr: lettArr,
-    provArr: provArr
+    _cb: null
   },
   methods: {
     open(params, cb) {
@@ -25,7 +25,7 @@ Component(mixin.component({
         max: params && params.max || 8,
         str: params && params.str || ''
       })
-      this.popup.open({maskNoBg: true})
+      this.popup.open({nobg: true})
       this.data._cb = cb
     },
     close() {

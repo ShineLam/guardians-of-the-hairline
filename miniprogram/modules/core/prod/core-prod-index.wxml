@@ -18,20 +18,20 @@
   </view>
   <view wx:for="{{list}}" wx:key="index">
     <!-- 待确认 >> -->
-    <view class="m-t-32 ticket no-sd" wx:if="{{stats == 0}}">
+    <view class="mt-32 ticket no-sd" wx:if="{{stats == 0}}">
       <view class="fx jc-sb b-b dashed p-tb">
         <view class="wt">
           <view class="fnt-28 fwb clr-04">{{item.name}}</view>
           <view class="fx jc-sb wt">
             <view>
-              <view class="fnt-24 clr-93 p-t-16">适用场所: {{item.siteNm}}</view>
-              <view class="fnt-24 clr-93 p-t-16">派发时间: {{item.creTime}}</view>
+              <view class="fnt-24 clr-93 pt-16">适用场所: {{item.siteNm}}</view>
+              <view class="fnt-24 clr-93 pt-16">派发时间: {{item.creTime}}</view>
             </view>
             <view class="clr-2a fwb">+<text class="fnt-40 clr-2a fwb">{{item.allCnt}}</text> </view>
           </view>
         </view>
       </view>
-      <view class="fx jc-sb m-t-20 p-b-20">
+      <view class="fx jc-sb mt-20 pb-20">
         <view class="clr-93 fnt-24 up-arr wb-ba">票据说明</view>
         <button class="btn s no-mr" data-i="{{index}}" catchtap="onEbl">确认</button>
       </view>
@@ -39,7 +39,7 @@
     <!-- 待确认 << -->
 
     <!-- 进行中 >> -->
-    <view class="wrap p-32 p-t-32 p-b-20 m-32 m-t-24" wx:if="{{stats == 1}}">
+    <view class="wrap plr-32 pt-32 pb-20 mlr-32mt-24" wx:if="{{stats == 1}}">
       <view class="fx jc-sb p-b">
         <view class="fnt-28 fwb">{{item.name}}</view>
         <view data-i="{{index}}" catchtap="onEdit">
@@ -47,38 +47,38 @@
         </view>
       </view>
       <view class="" data-i="{{index}}" bindtap="on2Dtl">
-        <view class="fx jc-sb p-b-24 fnt-26">
+        <view class="fx jc-sb pb-24 fnt-26">
           <view>分发进度</view>
           <view class="fx jc-sb wt-56">
             <progress class="pgs" border-radius="14" percent="{{(item.batCnt/item.allCnt) * 100}}" activeColor="#3377FF" backgroundColor="#F3F5F4" active></progress>
-            <view class="fwb m-l-16">
+            <view class="fwb ml-16">
               <text class="clr-33">{{item.batCnt}}</text>/<text>{{item.allCnt}}</text>
             </view>
           </view>
         </view>
-        <view class="fx jc-sb p-b-24 fnt-26">
+        <view class="fx jc-sb pb-24 fnt-26">
           <view>派票进度</view>
           <view class="fx jc-sb wt-56">
             <progress class="pgs" border-radius="14" percent="{{(item.sndCnt/item.allCnt) * 100}}" activeColor="#2AA371" backgroundColor="#F3F5F4" active></progress>
-            <view class="fwb m-l-16">
+            <view class="fwb ml-16">
               <text class="clr-2a">{{item.sndCnt}}</text>/<text>{{item.allCnt}}</text>
             </view>
           </view>
         </view>
-         <view class="fx jc-sb p-b-24 fnt-26">
+         <view class="fx jc-sb pb-24 fnt-26">
           <view>验票进度</view>
           <view class="fx jc-sb wt-56">
             <progress class="pgs" border-radius="14" percent="{{(item.chkCnt/item.allCnt) * 100}}" activeColor="#FFAE0C" backgroundColor="#F3F5F4" active></progress>
-            <view class="fwb m-l-16">
+            <view class="fwb ml-16">
               <text class="clr-ffa">{{item.chkCnt}}</text>/<text>{{item.allCnt}}</text>
             </view>
           </view>
         </view>
         <view class="fnt-24 clr-93 p-b b-b">
           <view>适用场地: {{item.siteNm || '所有场地'}}</view>
-          <view class="wb-ba p-t-4">票券说明: {{item.rmk}}</view>
+          <view class="wb-ba pt-4">票券说明: {{item.rmk}}</view>
         </view>
-        <view class="fx jc-fe p-t-16">
+        <view class="fx jc-fe pt-16">
           <button class="btn s no-mr" wx:if="{{item.sndCnt < item.allCnt}}" data-i="{{index}}" catchtap="onDispatch">派发</button>
           <button class="btn sub s no-mr" wx:else>查看</button>
         </view>
@@ -87,15 +87,15 @@
     <!-- 进行中 << -->
 
     <!-- 已完成 >> -->
-    <view class="wrap p-32 p-t-32 p-b-20 m-32 m-t-24" wx:if="{{stats == 9}}" data-i="{{index}}" bindtap="on2Dtl">
+    <view class="wrap plr-32 pt-32 pb-20 mlr-32mt-24" wx:if="{{stats == 9}}" data-i="{{index}}" bindtap="on2Dtl">
       <view class="fx jc-sb fwb">
         <view class="fnt-28">{{item.name}}</view>
         <view class="clr-2a">+<text class="fnt-32">{{item.allCnt || 0}}</text> </view>
       </view>
-      <view class="fnt-26 clr-62 m-t-24 m-b">{{item.siteNm}}</view>
-      <view class="b-t p-t-20">
+      <view class="fnt-26 clr-62 mt-24 m-b">{{item.siteNm}}</view>
+      <view class="b-t pt-20">
         <view class="fnt-24 clr-93">{{'创建时间: ' + item.creTime}}</view>
-        <view class="fnt-24 clr-93 p-t-4">{{'完成时间: ' + item.dnTime}}</view>
+        <view class="fnt-24 clr-93 pt-4">{{'完成时间: ' + item.dnTime}}</view>
       </view>
     </view>
     <!-- 已完成 << -->

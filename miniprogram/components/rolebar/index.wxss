@@ -1,0 +1,48 @@
+/* components/rolebar/index.wxss */
+
+.drawer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60rpx;
+  height: 44rpx;
+  color: #fff;
+  background: #fff;
+  border: 1rpx solid #EBEDEC;
+  border-radius: 0 100rpx 100rpx 0;
+  position: fixed;
+  left: 0;
+  top: 0rpx;
+  padding: 0;
+  z-index: 500;
+}
+
+
+/* 侧边栏 */
+
+.rolebar {
+  width: 540rpx;
+  height: 100vh;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  background: #fff;
+  overflow: hidden;
+  padding: 72rpx 40rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transform: rotate(0deg) scale(1) translate(-540rpx, 0%);
+  -webkit-transform: rotate(0deg) scale(1) translate(-540rpx, 0%);
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+.rolebar-enter {
+  transform: rotate(0deg) scale(1) translate(0%, 0%);
+  -webkit-transform: rotate(0deg) scale(1) translate(0%, 0%);
+}
+
+.rolebar-content {
+  padding: 0 80rpx;
+}

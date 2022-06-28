@@ -1,6 +1,5 @@
 const { mixin, api, util, conf } = require('../../utils/mixin.js')
 
-
 Component({
   options: {
     styleIsolation: 'apply-shared'
@@ -12,9 +11,10 @@ Component({
   data: {
     show: false,
     ableMaskClick: true,
-    maskNoBg: false,
-    noCloseIco: false,
+    nobg: false,
+    noCloseIco: true,
     title: '',
+    zIndex: 0,
     _cb: null
   },
 
@@ -24,9 +24,10 @@ Component({
       this.setData({
         show: true,
         ableMaskClick: params.ableMaskClick === undefined ? true : params.ableMaskClick,
-        maskNoBg: params.maskNoBg === undefined ? false : params.maskNoBg,
-        noCloseIco: params.noCloseIco === undefined ? false : params.noCloseIco,
-        title: params.title || ''
+        nobg: params.nobg === undefined ? false : params.nobg,
+        noCloseIco: params.noCloseIco === undefined ? true : params.noCloseIco,
+        title: params.title || '',
+        zIndex: params && ((params.zIndex - 0) || 0)
       })
       this.data._cb = cb
     },

@@ -12,8 +12,8 @@ Component({
   },
   data: {
     selected: 0,
-    color: "#939996",
-    selectedColor: "#3cc51f",
+    color:  "#221F1F",
+    selectedColor: "#CC2B22",
     list: conf.getAppTabarItems()
   },
   lifetimes: {

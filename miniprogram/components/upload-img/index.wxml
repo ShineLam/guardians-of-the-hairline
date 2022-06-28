@@ -1,0 +1,18 @@
+<wxs src="../../filters/core.wxs" module="f" />
+
+<view class="wrap-upd-img">
+  <view class="item-upd-img" wx:for="{{imgs}}" wx:key="index" data-p="img" data-i="{{index}}" bindtap="_onImg">
+    <image class="img" src="{{f.prefixurl(item)}}"></image>
+  </view>
+  <view class="item-upd-img" wx:for="{{path}}" wx:key="index" data-p="path" data-i="{{index}}" bindtap="_onImg">
+    <image class="img" src="{{f.imgurl(item)}}"></image>
+  </view>
+  <view class="item-upd-img upd-img" bindtap="_onChoose">
+    <view>
+      <image class="ico-upload" src="{{f.imgpath('ico-upload')}}"></image>
+    </view>
+    <view>选择图片</view>
+  </view>
+</view>
+
+<preview id="preview"></preview>

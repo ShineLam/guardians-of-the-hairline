@@ -1,4 +1,14 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "cpns": "/components/cpns/index",
+    "dialog": "/components/dialog/index",
+    "popup": "/components/popup/index",
+    "preview": "/components/preview/index",
+    "pick-time": "/components/pick-time/index",
+    "plate-keybod": "/components/plate-keybod/index",
+    "calc-keybod": "/components/calc-keybod/index",
+    "num-keybod": "/components/num-keybod/index",
+    "upload-img": "/components/upload-img/index"
+  }
 }

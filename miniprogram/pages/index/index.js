@@ -140,11 +140,11 @@ Page(mixin.page({
     });
   },
 
-  on2() {
-    util.navNext('core-prod-index')
-    // wx.navigateTo({url:'/pages/modules/core/prod/core-prod-index'})
-  },
   onLoad() {
     util.navNext('tab-home', { tabarId: 'core' })
+
+  },
+  onReady() {
+
   }
 }))

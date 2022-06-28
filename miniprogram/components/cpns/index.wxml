@@ -1,0 +1,43 @@
+<wxs src="../../filters/core.wxs" module="f" />
+<import src="/templates/no-data.wxml" />
+
+<dialog id="dialog">
+  <view class="cpns">
+    <!-- <view class="naver no-sd">
+      <view class="vw {{query.type == index + 1 ? 'active' : ''}}" wx:for="{{nav}}" wx:key="index" data-i="{{index + 1}}" bindtap="onNav">
+        {{item}}</view>
+    </view> -->
+    <view class="fnt-32 fwb pt-40 pb-16 plr-32">可使用优惠券</view>
+    <scroll-view class="sv" scroll-y bindscrolltolower="onBtm">
+      <view class="mt-12 plr-32">
+        <checkbox-group data-p="ids" bindchange="onInput">
+          <label class="wrap bor-10 wt fx jc-sb ptb-32 plr-16 mt-24" wx:for="{{list}}" wx:key="index">
+            <view class="ml-20">
+              <view class="fnt-28 fwb txt-of">{{item.title}}</view>
+              <view class="fnt-22 clr-66 pt-4">有效期至{{item.expto}} </view>
+              <view class="fnt-22 clr-66 pt-4">{{f.cpnscopes(item.scopes)}} </view>
+            </view>
+            <view class="fx">
+              <view class="clr-d6 txt-rgt plr-16">
+                <view class="fnt-32 fwb txt-rgt">￥{{f.fentoyuan(item.amt)}}</view>
+                <view class="fnt-22">满{{f.fentoyuan(item.thred)}}元可用</view>
+              </view>
+              <checkbox value="{{item.id}}" checked="{{item.chked}}" name="cpns" disabled="{{item.stats !== 1}}">
+              </checkbox>
+            </view>
+          </label>
+        </checkbox-group>
+      </view>
+      <template is="no-data" data="{{show: !list.length}}" />
+    </scroll-view>
+
+    <view class="btm">
+      <checkbox-group class="pr fx">
+        <checkbox checked="{{!ids.length}}" bindtap="onCnl">不使用优惠券</checkbox>
+      </checkbox-group>
+      <view class="vw">
+        <view class="btn" bindtap="onCfm">确认</view>
+      </view>
+    </view>
+  </view>
+</dialog>

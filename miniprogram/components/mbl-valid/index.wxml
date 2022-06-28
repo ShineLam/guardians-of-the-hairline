@@ -1,10 +1,10 @@
 <wxs src="../../filters/core.wxs" module="f" />
 
-<popup id="popup" bind:popuptap="onPopuptap">
-  <view class="p-t-60 p-b-60 p-60" wx:if="{{!validType}}">
+<popup id="popup">
+  <view class="pt-40 pb-40 plr-40" wx:if="{{!validType}}">
     <view>
-      <view class="fnt-48 fwb p-b-24">欢迎使用</view>
-      <view class="fnt-28 clr-62 p-b-60">智能化堆土场管理平台</view>
+      <view class="fnt-48 fwb pb-24">欢迎使用</view>
+      <view class="fnt-28 clr-62 pb-40">智能化堆土场管理平台</view>
     </view>
     <!-- 获取微信手机号 -->
     <view class="">
@@ -21,33 +21,33 @@
 
   <!-- 自定义校验手机 -->
   <view wx:if="{{validType == 'custom'}}">
-    <view class="p-t-60 p-b p-60">
+    <view class="pt-40 p-b plr-40">
       <view wx:if="{{kbType == 'num_mbl'}}">
         <view class="lft-arr" bindtap="onBack"></view>
         <view class="p-tb-48">
           <view class="fnt-48 fwb">{{title}}(1/2)</view>
-          <view class="fnt-28 clr-62 p-t-16">{{desc}}</view>
+          <view class="fnt-28 clr-62 pt-16">{{desc}}</view>
         </view>
         <view class="">
           <view class="p-t-8">
             <view class="ipt-wrap">
-              <view class="inp no-p-l">{{form.mbl}}</view>
+              <view class="inp no-pl-32">{{form.mbl}}</view>
             </view>
-            <view class="fnt-24 clr-ff6 p-t-16">{{errMsg}}</view>
+            <view class="fnt-24 clr-ff6 pt-16">{{errMsg}}</view>
           </view>
         </view>
       </view>
       <view class="p-b" wx:else>
         <view class="p-b-48">
           <view class="fnt-40">{{title}}(2/2)</view>
-          <view class="fnt-28 clr-62 p-t-4" wx:if="{{showTips}}">短信验证码已发送至{{form.mbl}}</view>
+          <view class="fnt-28 clr-62 pt-4" wx:if="{{showTips}}">短信验证码已发送至{{form.mbl}}</view>
         </view>
         <view>
           <view class="p-t-8">
             <view class="fx fx-one fnt-48 txt-cnt p-tb-16 code-inp">
               <view class="vw" wx:for="{{6}}" wx:key="index">{{form.smsCode[index]}}</view>
             </view>
-            <view class="fnt-24 clr-62 p-t-16 clr-62" bindtap="sendSms">{{codeTxt}}</view>
+            <view class="fnt-24 clr-62 pt-16 clr-62" bindtap="sendSms">{{codeTxt}}</view>
           </view>
         </view>
       </view>
@@ -63,7 +63,7 @@
         <view class="area-act">
           <view>
             <button class="fx jc-cnt btn" data-id="kb-del" bindtap="_onKey" hover-class="btn-hover-white">
-              <image class="img" src="{{f.imgpath('ico-kb-del')}}"></image>
+              <image class="img" src="{{f.imgpath('ico-del')}}"></image>
             </button>
           </view>
           <view class="done-btn">

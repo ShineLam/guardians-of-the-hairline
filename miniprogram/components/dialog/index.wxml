@@ -1,17 +1,17 @@
 <view class='mask' wx:if="{{show}}" bindtap='onMaskHide'></view>
-<view class='pop {{show ? "pop-enter" : ""}}' style="z-index: {{700 + zIndex}}">
+<view class='dialog {{show ? "dialog-enter" : ""}}' style="z-index: {{700 + zIndex}}">
   <view wx:if="{{show}}">
     <view class='ico-close' wx:if="{{hasClsBtn}}" bindtap='hide'>
       <image class="img" src="{{filter.setImgUrl('ico-close')}}"></image>
     </view>
-    <view class="fnt-32 fwb txt-cnt p-t-40" wx:if="{{title}}">{{title}}</view>
-    <view class='p-32 p-t p-b txt-cnt' wx:if="{{cnt}}">
+    <view class="fnt-32 fwb txt-cnt pt-40" wx:if="{{title}}">{{title}}</view>
+    <view class='plr-32 p-t p-b txt-cnt' wx:if="{{cnt}}">
       <view>{{cnt}}</view>
     </view>
     <view>
       <slot></slot>
     </view>
-    <view class='pop-btn' wx:if="{{type == 'dlg' || type == 'cfm'}}">
+    <view class='dialog-btn' wx:if="{{type == 'dlg' || type == 'cfm'}}">
       <view class="clr-82 vw" bindtap='_onCnl' wx:if="{{type == 'dlg'}}">{{cnlTxt}}</view>
       <view class="vw" bindtap='_onCfm'>{{cfmTxt}}</view>
     </view>

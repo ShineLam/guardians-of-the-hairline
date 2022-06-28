@@ -1,12 +1,10 @@
 <wxs src="../../filters/core.wxs" module="f" />
 
-<popup id="popup" bind:popuptap="onPopuptap">
-  <view class="wrap bor">
-    <view class="p-60 p-b-60">
-      <view class="fnt-48 fwb p-tb-40">输入车牌</view>
+<popup id="popup">
+  <view class="wrap bor-20">
+    <view class="plr-40 ptb-32">
       <view class='input-area'>
-        <view class='vw {{index == 7 && str.length < 8 ? "new-energy" : ""}} {{(index === str.length) && str.length < 8 ? "active" : ""}}' 
-              wx:for="{{8}}" wx:key="index" data-i='{{index}}' bindtap='onItem'>
+        <view class='vw {{index == 7 && str.length < 8 ? "new-energy" : ""}} {{(index === str.length) && str.length < 8 ? "active" : ""}}' wx:for="{{8}}" wx:key="index" data-i='{{index}}' bindtap='onItem'>
           <text wx:if="{{str.length > index}}">{{str[index]}}</text>
           <text wx:if="{{index == 7 && str.length < 8}}">新能源</text>
         </view>
@@ -43,7 +41,7 @@
       </block>
     </view>
     <button class='fx jc-cnt btn-del ab' data-i="-1" bindtap='_onKey' hover-class="hover-class">
-      <image class="ico-del" src="{{f.imgpath('ico-kb-del1')}}"></image>
+      <image class="ico-del" src="{{f.imgpath('ico-del')}}"></image>
     </button>
   </view>
 </popup>

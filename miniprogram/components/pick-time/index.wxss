@@ -1,0 +1,16 @@
+.pv {
+  width: 100vw;
+  height: 600rpx;
+}
+
+.pv {
+  text-align: center;
+}
+
+.pv .vw {
+  line-height: 50px;
+}
+
+.pv .indicator {
+  height: 100rpx;
+}

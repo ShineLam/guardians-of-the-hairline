@@ -1,5 +1,20 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
+<import src="/templates/page-abilities.wxml" />
 
-<view class="box p-b-100">
+<view class="box pb-100">
   THIS IS CORE HOME
+  <view>
+    <view wx:for="{{nav}}" wx:key="index" data-i="{{index}}" bindtap="onNav">{{item}}</view>
+  </view>
+  
+  <template is="any-page" />
+  <cpns id="cpns"></cpns>
+  <dialog id="dialog"></dialog>
+  <popup id="popup"></popup>
+  <preview id="preview"></preview>
+  <pick-time id="pick-time"></pick-time>
+  <plate-keybod id="plate-keybod"></plate-keybod>
+  <calc-keybod id="calc-keybod"></calc-keybod>
+  <!-- <num-keybod id="num-keybod"></num-keybod> -->
+  <upload-img id="upload-img"></upload-img>
 </view>

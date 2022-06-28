@@ -4,15 +4,15 @@
 <dialog id="dialog">
   <view class="auth-wrap">
     <view class="fnt fwb p-b">服务授权</view>
-    <view class="fnt-28 p-b-20">正常使用小程序功能,请点击"同意授权",将获取头像、昵称等信息</view>
+    <view class="fnt-28 pb-20">正常使用小程序功能,请点击"同意授权",将获取头像、昵称等信息</view>
     <!-- 确认按钮 -->
-    <view class="fx jc-sb fx-one p-t-60" wx:if="{{cfm == 0}}">
+    <view class="fx jc-sb fx-one pt-40" wx:if="{{cfm == 0}}">
       <button class="vw btn sub" hover-class="btn-hover" bindtap="onUserCancel">取消授权</button>
-      <button class="vw btn m-l-16" hover-class="btn-hover" open-type="getUserInfo" bindgetuserinfo="onWexcallbak">同意授权</button>
+      <button class="vw btn ml-16" hover-class="btn-hover" open-type="getUserInfo" bindgetuserinfo="onWexcallbak">同意授权</button>
     </view>
     <!-- 再次确认 -->
-    <view class="fx jc-sb fx-one p-t-60" wx:if="{{cfm == 1}}">
-      <button class="vw btn m-l-16" hover-class="btn-hover" open-type="getUserInfo" bindgetuserinfo="onWexcallbak2">请再次确认授权</button>
+    <view class="fx jc-sb fx-one pt-40" wx:if="{{cfm == 1}}">
+      <button class="vw btn ml-16" hover-class="btn-hover" open-type="getUserInfo" bindgetuserinfo="onWexcallbak2">请再次确认授权</button>
     </view>
   </view>
 </dialog>

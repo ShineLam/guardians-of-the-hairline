@@ -29,5 +29,4 @@
 
   <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
 
-  <view bindtap="on2">ON2</view>
 </view>

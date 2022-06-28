@@ -1,0 +1,46 @@
+<wxs src="../../filters/core.wxs" module="f" />
+
+<popup id="popup">
+  <view class="calc">
+    <view class="plr-40 pt-32">
+      <view class="fx jc-sb fnt-26 fwb">
+        <view style="width: 300rpx;">{{title}}</view>
+      </view>
+      <view class="wrap-tips" wx:if="{{tipslen > 1}}">
+        <view class="vw">{{tips}}</view>
+      </view>
+      <view class="fx jc-fe ptb-16 b-b ov-h">
+        <view class="fwb">
+          <text class="fnt-28">￥</text><text class="fnt-48 nowrap">{{result}}</text>
+        </view>
+      </view>
+      <view class="fx jc-fe ptb-32">
+        <view class="btn-oprate disc" data-v="z" data-n="0.9" bindtap="_onKey">9折</view>
+        <view class="btn-oprate disc" data-v="z" data-n="0.95" bindtap="_onKey">95折</view>
+        <view class="btn-oprate disc" data-v="z" data-n="0.98" bindtap="_onKey">98折</view>
+      </view>
+    </view>
+    <view class="top-opr">
+      <view class="key fnt-32" data-v="r" bindtap="_onKey">重置</view>
+      <view class="key fnt-32" data-v="o" bindtap="_onKey">抹零</view>
+      <view class="key fnt-48" data-v="÷" bindtap="_onKey">÷</view>
+      <view class="key fnt-48" data-v="*" bindtap="_onKey">×</view>
+    </view>
+    <view class="keybod">
+      <view class="num">
+        <block wx:for="{{numArr}}" wx:key="index">
+          <view class="key itm-1" data-v="{{item}}" bindtap="_onKey">{{item}}</view>
+        </block>
+        <view class="key" data-v="c" bindtap="_onKey">
+          <image class="ico-del" src="{{f.imgpath('ico-del')}}"></image>
+        </view>
+      </view>
+      <view class="oprate">
+        <view class="key" data-v="+" bindtap="_onKey">+</view>
+        <view class="key" data-v="-" bindtap="_onKey">-</view>
+        <view class="key" data-v="=" bindtap="_onKey">=</view>
+        <view class="key done" data-v="e" bindtap="_onKey">确定</view>
+      </view>
+    </view>
+  </view>
+</popup>

@@ -1,0 +1,23 @@
+<popup id="popup">
+  <view class="fx jc-sb ptb-24 plr-40 b-b">
+    <view bindtap="onCnl">取消</view>
+    <view capture-bind:tap="onCfm">确认</view>
+  </view>
+  <picker-view class="pv" indicator-class="indicator" value="{{value}}" bindchange="onChange" bindpickend="onEnded">
+    <picker-view-column class="pvc">
+      <view class="vw" wx:for="{{years}}" wx:key="index">{{item}}年</view>
+    </picker-view-column>
+    <picker-view-column class="pvc">
+      <view class="vw" wx:for="{{months}}" wx:key="index">{{item}}月</view>
+    </picker-view-column>
+    <picker-view-column class="pvc">
+      <view class="vw" wx:for="{{days}}" wx:key="index">{{item}}日</view>
+    </picker-view-column>
+    <picker-view-column class="pvc">
+      <view class="vw" wx:for="{{hours}}" wx:key="index">{{item}}时</view>
+    </picker-view-column>
+    <picker-view-column class="pvc">
+      <view class="vw" wx:for="{{minutes}}" wx:key="index">{{item}}分</view>
+    </picker-view-column>
+  </picker-view>
+</popup>

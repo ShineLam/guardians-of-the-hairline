@@ -1,7 +1,7 @@
 <wxs src="../../filters/core.wxs" module="f" />
 
-<view class="mask {{maskNoBg ? 'no-bg' : ''}}" wx:if="{{show}}" bindtap='onMask'></view>
-<view class="pop-up {{show ? 'pop-up-enter' : 'pop-up-exit'}}">
+<view class="mask {{nobg ? 'no-bg' : ''}}" style="z-index: {{600 + zIndex}}" wx:if="{{show}}" bindtap='onMask'></view>
+<view class="pop-up {{show ? 'pop-up-enter' : 'pop-up-exit'}}" style="z-index: {{601 + zIndex}}">
   <view class='ico-close' wx:if="{{!noCloseIco}}" bindtap='close'>
     <image class="img" src="{{f.imgPath('ico-close')}}"></image>
   </view>

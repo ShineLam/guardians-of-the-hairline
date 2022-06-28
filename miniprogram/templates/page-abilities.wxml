@@ -1,4 +1,4 @@
 <template name="any-page">
   <user-auth id="userAuth"></user-auth>
-  <mbl-valid id="mblValid"></mbl-valid>
+  <mbl-valid id="mbl-valid"></mbl-valid>
 </template>

@@ -7,5 +7,5 @@
       <view class="fnt-26">暂无数据</view>
     </view>
   </view>
-  <view class="fnt-24 clr-cc txt-cnt p-t-20" wx:if="{{noMore}}">没有更多了</view>
+  <view class="fnt-24 clr-cc txt-cnt pt-20" wx:if="{{noMore}}">没有更多了</view>
 </template>

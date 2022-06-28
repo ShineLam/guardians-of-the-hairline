@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Guardians"
+  "navigationBarTitleText": "Guardians",
+  "usingComponents": {
+    "rolebar": "/components/rolebar/index"
+  }
 }

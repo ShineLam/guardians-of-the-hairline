@@ -2,7 +2,7 @@
 
 /* 自定义弹窗 */
 
-.pop {
+.dialog {
   width: 80%;
   background: #fff;
   border-radius: 12rpx;
@@ -19,39 +19,39 @@
   -webkit-transition: All 0.2s ease;
 }
 
-.pop-s {
+.dialog-s {
   top: 30%;
 }
 
-.pop-enter {
+.dialog-enter {
   opacity: 1;
   transform: scale(1, 1);
   -webkit-transform: scale(1, 1);
   z-index: 1000;
 }
 
-.pop .fnt {
+.dialog .fnt {
   background: #f8f8f8;
   padding: 36rpx 40rpx 32rpx;
 }
 
-.pop-btn {
+.dialog-btn {
   display: flex;
   align-items: center;
   border-top: 1px solid #f6f6f6;
 }
 
-.pop-btn > .vw {
+.dialog-btn > .vw {
   flex: 1;
   text-align: center;
   padding: 30rpx;
 }
 
-.pop-btn > .vw + .vw {
+.dialog-btn > .vw + .vw {
   border-left: 1px solid #f6f6f6;
 }
 
-.pop-btn > .vw:last-of-type {
+.dialog-btn > .vw:last-of-type {
   color: #2AA371;
 }
 
