@@ -234,7 +234,7 @@ const addUserAuthAbility = function (ctx, defMethods) {
     // 请求用户授权
     openUserAuth: function (opts, cb, fb) {
       console.log('【请求授权】 opts: ', opts)
-      let userAuth = this.selectComponent('#userAuth')
+      let userAuth = this.selectComponent('#user-auth')
       if (userAuth && typeof (userAuth.open) === 'function') {
         userAuth.open(opts, cb, fb)
       } else {

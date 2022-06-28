@@ -3,8 +3,8 @@
 <popup id="popup">
   <view class="pt-40 pb-40 plr-40" wx:if="{{!validType}}">
     <view>
-      <view class="fnt-48 fwb pb-24">欢迎使用</view>
-      <view class="fnt-28 clr-62 pb-40">智能化堆土场管理平台</view>
+      <view class="fnt-48 fwb pb-24">Welcome</view>
+      <view class="fnt-28 clr-62 pb-40">Hairline Guardian Alliance</view>
     </view>
     <!-- 获取微信手机号 -->
     <view class="">
@@ -14,7 +14,7 @@
       </button>
     </view>
     <view class="btn sub bor" data-validtype="custom" bindtap="onChangeValidType">
-      <view class="fx jc-cnt"><image class="ico-for-btn" src="{{f.imgpath('ico-tel')}}"></image></view>
+      <view class="fx jc-cnt"><image class="ico-for-btn" src="{{f.imgpath('ico-phone')}}"></image></view>
       <text>使用其他手机号</text>
     </view>
   </view>

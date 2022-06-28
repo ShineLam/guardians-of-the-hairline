@@ -15,6 +15,6 @@
   <pick-time id="pick-time"></pick-time>
   <plate-keybod id="plate-keybod"></plate-keybod>
   <calc-keybod id="calc-keybod"></calc-keybod>
-  <!-- <num-keybod id="num-keybod"></num-keybod> -->
+  <num-keybod id="num-keybod"></num-keybod>
   <upload-img id="upload-img"></upload-img>
 </view>
