@@ -698,6 +698,7 @@ module.exports = {
   isStr,
   isArray,
   isObj,
+  isNull,
   isPltNum,
   isMobile,
   isEqualList,

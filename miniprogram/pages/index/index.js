@@ -142,9 +142,7 @@ Page(mixin.page({
 
   onLoad() {
     util.navNext('tab-home', { tabarId: 'core' })
-
   },
   onReady() {
-
   }
 }))

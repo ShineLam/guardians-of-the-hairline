@@ -42,8 +42,8 @@
 }
 
 .ico-del {
-  width: 36rpx;
-  height: 26rpx;
+  width: 46rpx;
+  height: 36rpx;
 }
 
 .num {

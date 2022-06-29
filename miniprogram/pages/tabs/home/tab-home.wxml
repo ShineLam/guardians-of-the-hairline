@@ -2,4 +2,6 @@
 <core-home id="core" class=".tabcontent" wx:if="{{core}}"></core-home>
 <admin-home id="admin" class=".tabcontent" wx:if="{{admin}}"></admin-home>
 
+<!-- <view style="width: 100vw;height: {{height}}px;position: absolute;bottom: 0;"></view> -->
+
 <rolebar></rolebar>

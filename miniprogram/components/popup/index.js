@@ -9,6 +9,7 @@ Component({
   },
 
   data: {
+    safeBtm: 0,
     show: false,
     ableMaskClick: true,
     nobg: false,
@@ -30,6 +31,8 @@ Component({
         zIndex: params && ((params.zIndex - 0) || 0)
       })
       this.data._cb = cb
+      console.log(util.isNull(this.getTabBar()))
+      !util.isNull(this.getTabBar()) && this.setSafebtm()
     },
     close() {
       this.setData({ show: false })
@@ -37,6 +40,18 @@ Component({
     },
     onMask() {
       this.data.ableMaskClick && this.close()
+    },
+    setSafebtm() {
+      let self = this
+      wx.getSystemInfo({
+        success(res) {
+          let { screenHeight, safeArea: { bottom } } = res
+          if (screenHeight && bottom) {
+            let safeBtm = 48 + (screenHeight - bottom)
+            self.setData({ safeBtm })
+          }
+        }
+      })
     }
   }
 })
