@@ -1,12 +1,12 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
 <import src="/templates/page-abilities.wxml" />
 
-<view class="box pb-100">
-  THIS IS CORE HOME
+<view class="box plr-40 pb-100">
+  <view class="txt-cnt ptb-32">THIS IS CORE HOME</view>
   <view>
     <view wx:for="{{nav}}" wx:key="index" data-i="{{index}}" bindtap="onNav">{{item}}</view>
   </view>
-  
+
   <template is="any-page" />
   <cpns id="cpns"></cpns>
   <dialog id="dialog"></dialog>
