@@ -11,7 +11,7 @@
     <view>
       <image class="ico-upload" src="{{f.imgpath('ico-upload')}}"></image>
     </view>
-    <view>选择图片</view>
+    <view>upload-img</view>
   </view>
 </view>
 

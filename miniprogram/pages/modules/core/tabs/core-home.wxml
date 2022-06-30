@@ -1,10 +1,17 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
 <import src="/templates/page-abilities.wxml" />
 
+<wxs src="../../../../filters/core.wxs" module="f" />
+
 <view class="box plr-40 pb-100">
   <view class="txt-cnt ptb-32">THIS IS CORE HOME</view>
-  <view>
-    <view wx:for="{{nav}}" wx:key="index" data-i="{{index}}" bindtap="onNav">{{item}}</view>
+  <view class="nav">
+    <view wx:for="{{nav}}" wx:key="index" data-i="{{index}}" bindtap="onNav">
+      <view class="ico-nav">
+        <image mode="scaleToFill" src="{{f.imgpath(item.ico)}}"></image>
+      </view>
+      <view>{{item.title}}</view>
+    </view>
   </view>
 
   <template is="any-page" />
@@ -16,5 +23,7 @@
   <plate-keybod id="plate-keybod"></plate-keybod>
   <calc-keybod id="calc-keybod"></calc-keybod>
   <num-keybod id="num-keybod"></num-keybod>
-  <upload-img id="upload-img"></upload-img>
+  <view class="wrap-imgs">
+    <upload-img id="upload-img"></upload-img>
+  </view>
 </view>

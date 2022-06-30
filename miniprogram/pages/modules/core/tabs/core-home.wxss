@@ -1,0 +1,33 @@
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 16rpx;
+  grid-row-gap: 16rpx;
+}
+
+.nav > view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8rpx;
+  border: 2rpx solid #ccc;
+  padding: 40rpx 0;
+}
+
+.ico-nav {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.ico-nav image {
+  width: 100%;
+  height: 100%;
+}
+
+.wrap-imgs {
+  margin: 16rpx 0;
+  border-radius: 4rpx;
+  border: 2rpx solid #ccc;
+  padding: 32rpx;
+}
