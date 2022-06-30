@@ -1,12 +1,12 @@
-<view class='mask' wx:if="{{show}}" bindtap='onMaskHide'></view>
+<view class='mask' wx:if="{{show}}" bindtap='onMask'></view>
 <view class='dialog {{show ? "dialog-enter" : ""}}' style="z-index: {{700 + zIndex}}">
   <view wx:if="{{show}}">
-    <view class='ico-close' wx:if="{{hasClsBtn}}" bindtap='hide'>
+    <view class='ico-close' wx:if="{{close}}" bindtap='hide'>
       <image class="img" src="{{filter.setImgUrl('ico-close')}}"></image>
     </view>
     <view class="fnt-32 fwb txt-cnt pt-40" wx:if="{{title}}">{{title}}</view>
-    <view class='plr-32 p-t p-b txt-cnt' wx:if="{{cnt}}">
-      <view>{{cnt}}</view>
+    <view class='plr-32 p-t p-b txt-cnt' wx:if="{{content}}">
+      <view>{{content}}</view>
     </view>
     <view>
       <slot></slot>

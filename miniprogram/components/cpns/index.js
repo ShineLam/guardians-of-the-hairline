@@ -31,7 +31,7 @@ Component(mixin.component({
       this.data.payAmt = params.payAmt || ''
       this.data.srvordId = params.srvordId || ''
       this.dialog.open({ btnGroup: false })
-      this.data._cb = cb
+      this.data._cb = cb || null
       this.getList()
     },
     getList() {

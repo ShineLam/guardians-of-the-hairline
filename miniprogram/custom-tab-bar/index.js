@@ -52,7 +52,7 @@ Component({
         let list = this.data.list
         list.forEach((tab, i) => {
           let item = items[i] || { show: false }
-          tab.show = (item.show || item.show === null || item.show === undefined)
+          tab.show = (item.show || util.isNull(item.show))
           tab.text = item.text || tab.text
           tab.iconPath = item.iconPath || tab.iconPath
           tab.selectedIconPath = item.selectedIconPath || tab.selectedIconPath
@@ -82,7 +82,7 @@ Component({
 
     // 设置选中状态
     setSelected (defIndex) {
-      let index = defIndex === undefined ? this.getTabPageIndex(0) : defIndex
+      let index = util.isNull(defIndex) ? this.getTabPageIndex(0) : defIndex
       let tabarId = this.getCurTabarId()
       let items = conf.getTabarItems(tabarId)
       console.log('【CustomTabbar】 tabbar selected: ', tabarId, index)
@@ -92,7 +92,7 @@ Component({
 
     // 设置tab项信息
     setTabitem (item, index) {
-      index = index === undefined ? this.getTabPageIndex(0) : index
+      index = util.isNull(index) ? this.getTabPageIndex(0) : index
       let tabitem = this.data.list[index]
       if (tabitem) {
         tabitem.text = item.text || tab.text

@@ -23,9 +23,9 @@ Component(mixin.component({
         max: params && params.max || 8,
         str: params && params.str || ''
       })
-      this.data._cb = cb
+      this.data._cb = cb || null
       this.setNumArr(params)
-      this.popup.open({maskNoBg: true})
+      this.popup.open({maskmask: true})
     },
     close() {
       this.popup.close()

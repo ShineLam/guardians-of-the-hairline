@@ -114,6 +114,10 @@ const isObj = (val) => {
 const isNull = (val) => {
   return val === null || val === undefined
 }
+// 判断值是否为空
+const isEmpty = (val) => {
+  return isNull(val) || val === ''
+}
 
 // 是否超时
 const isTimeoutSecs = (diffSecs, t1ms, t2ms) => {
@@ -699,6 +703,7 @@ module.exports = {
   isArray,
   isObj,
   isNull,
+  isEmpty,
   isPltNum,
   isMobile,
   isEqualList,

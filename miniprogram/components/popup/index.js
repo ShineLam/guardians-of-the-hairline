@@ -9,13 +9,13 @@ Component({
   },
 
   data: {
-    safeBtm: 0,
     show: false,
-    ableMaskClick: true,
-    nobg: false,
-    noCloseIco: true,
+    maskClick: true,
+    mask: true,
+    close: true,
     title: '',
     zIndex: 0,
+    safeBtm: 0,
     _cb: null
   },
 
@@ -24,14 +24,13 @@ Component({
       params = params || {}
       this.setData({
         show: true,
-        ableMaskClick: params.ableMaskClick === undefined ? true : params.ableMaskClick,
-        nobg: params.nobg === undefined ? false : params.nobg,
-        noCloseIco: params.noCloseIco === undefined ? true : params.noCloseIco,
-        title: params.title || '',
-        zIndex: params && ((params.zIndex - 0) || 0)
+        maskClickable: util.isEmpty(params?.maskClickable) ? true : params.maskClickable,
+        mask: util.isEmpty(params?.mask) ? false : params.mask,
+        close: util.isEmpty(params?.close) ? true : params.close,
+        title: params?.title || '',
+        zIndex: (params?.zIndex - 0) || 0
       })
-      this.data._cb = cb
-      console.log(util.isNull(this.getTabBar()))
+      this.data._cb = cb || null
       !util.isNull(this.getTabBar()) && this.setSafebtm()
     },
     close() {
@@ -39,7 +38,7 @@ Component({
       this.data._cb = null
     },
     onMask() {
-      this.data.ableMaskClick && this.close()
+      this.data.maskClickable && this.close()
     },
     setSafebtm() {
       let self = this

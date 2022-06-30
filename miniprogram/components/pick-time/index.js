@@ -16,7 +16,7 @@ Component(mixin.component({
   },
   methods: {
     open(cb) {
-      this.data._cb = cb
+      this.data._cb = cb || null
       this.init()
       this.popup.open()
     },
@@ -76,7 +76,7 @@ Component(mixin.component({
       })
     },
     fmtValue(value) {
-      if (value === null || value === undefined || value === '') {
+      if (util.isEmpty(value)) {
         return ''
       } else {
         value = (value - 0)

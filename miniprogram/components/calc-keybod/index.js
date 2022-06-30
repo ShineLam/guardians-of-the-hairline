@@ -25,14 +25,14 @@ Component(mixin.component({
     open(params, cb) {
       let str = util.isNull(params.str) ? '' : this.trim0(params.str.toString().trim())
       let zIndex = params?.zIndex || 0
-      let nobg = params?.nobg || false
+      let mask = params?.mask || false
       this.setData({
         title: params?.title || '金额',
         orgStr: str
       })
       this.op_reset(str).op_show()
-      this.data._cb = cb
-      this.popup.open({ nobg, zIndex })
+      this.data._cb = cb || null
+      this.popup.open({ mask, zIndex })
     },
     // 关闭组件
     close() {
@@ -83,7 +83,7 @@ Component(mixin.component({
     },
     // 重置操作
     op_reset(init) {
-      let num = (init === null || init === undefined) ? '' : init.toString()
+      let num = util.isNull(init) ? '' : init.toString()
       expressions.splice(0)
       this.op_push(num).op_show()
       return this

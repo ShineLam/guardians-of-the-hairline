@@ -51,12 +51,12 @@ Component(mixin.component({
         errMsg: params.mbl ? '点击获取验证码' : '输入手机号，点击获取验证码'
       })
       //
-      this.data._cb = cb
+      this.data._cb = cb || null
       this.data._fb = fb
       this.data._chKMblfn = params.chKMblfn
       this.initKb()
       this.popup.open({
-        ableMaskClick: false  // 禁止点击关闭(考虑用户输入验证码的过程可能会无意关闭)
+        maskClickable: false  // 禁止点击关闭(考虑用户输入验证码的过程可能会无意关闭)
       })
     },
     // 关闭

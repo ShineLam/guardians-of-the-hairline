@@ -25,8 +25,8 @@ Component(mixin.component({
         max: params && params.max || 8,
         str: params && params.str || ''
       })
-      this.popup.open({nobg: true})
-      this.data._cb = cb
+      this.popup.open({mask: true})
+      this.data._cb = cb || null
     },
     close() {
       this.popup.close()

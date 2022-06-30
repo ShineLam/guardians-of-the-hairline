@@ -136,7 +136,7 @@ const buildApiFn = (fname, url, method, options, urlPrefix) => {
   let apifn = (params, cb, fb, opts) => {
     let reqUrl = url
     if (pathParamIdx0 >= 0 && pathParamIdx1 > pathParamIdx0) {
-      if (params === undefined || params === null || params === '') {
+      if (util.isEmpty(params)) {
         fb && fb({ code: 508, msg: '路径参数为空' })
         return
       }

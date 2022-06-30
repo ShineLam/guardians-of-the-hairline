@@ -9,14 +9,14 @@ Component(mixin.component({
   },
   data: {
     show: false,
-    zIndex: 0,
+    maskClick: true,
+    close: false,
     type: '', // 确认框: cfm, 对话框: dlg, 弹窗: ''
-    ablClickMask: true,
-    hasClsBtn: false,
     title: '',
     cnlTxt: '取消',
     cfmTxt: '确定',
-    cnt: '',
+    content: '',
+    zIndex: 0,
     _cb: null,
     _fb: null
   },
@@ -25,15 +25,15 @@ Component(mixin.component({
       this.setData({
         show: true,
         title: params && (params.title || ''),
-        cnt: params && (params.cnt || ''),
+        content: params && (params.content || ''),
         cnlTxt: params && (params.cnlTxt || '取消'),
         cfmTxt: params && (params.cfmTxt || '确定'),
-        hasClsBtn: params && (params.hasClsBtn === undefined ? false : params.hasClsBtn),
-        type: params && (params.type === undefined ? '' : params.type),
-        ablClickMask: params && (params.ablClickMask === undefined ? true : params.ablClickMask),
+        close: params && (util.isEmpty(params.close) ? false : params.close),
+        type: params && (util.isEmpty(params.type) ? '' : params.type),
+        maskClick: params && (util.isEmpty(params.maskClick) ? true : params.maskClick),
         zIndex: params && (params.zIndex || 0)
       })
-      this.data._cb = cb
+      this.data._cb = cb || null
       this.data._fb = fb
     },
     close() {
@@ -41,8 +41,8 @@ Component(mixin.component({
         show: false
       })
     },
-    onMaskHide() {
-      if (this.data.ablClickMask) {
+    onMask() {
+      if (this.data.maskClick) {
         this.close()
         this.triggerEvent('maskEvt')
       }
