@@ -3,8 +3,7 @@
 
 <wxs src="../../../../filters/core.wxs" module="f" />
 
-<view class="box plr-40 pb-180">
-  <view class="txt-cnt ptb-32">THIS IS CORE HOME</view>
+<view class="box pt-40 plr-40 pb-180">
   <view class="nav">
     <view wx:for="{{nav}}" wx:key="index" data-i="{{index}}" bindtap="onNav">
       <view class="ico-nav">
