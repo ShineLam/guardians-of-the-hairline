@@ -1,0 +1,74 @@
+scroll-view {
+  height: 100vh;
+}
+
+.group-type {
+  font-size: 24rpx;
+  color: #666;
+  background-color: #F7F7F7;
+  padding: 4rpx 40rpx;
+}
+
+.group-item {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 8rpx 22rpx;
+  background-color: #fff;
+}
+
+.group-item image {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #F7F7F7;
+  margin-right: 20rpx;
+}
+
+.wrap-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16rpx;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.wrap-index>view {
+  width: 34rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #666;
+  border-radius: 50%;
+  padding: 6rpx;
+}
+
+.wrap-index>.active {
+  color: #fff;
+  background-color: #CC2B22;
+}
+
+
+/* 侧边栏 */
+
+.sidebar {
+  width: 506rpx;
+  height: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  transform: rotate(0deg) scale(1) translate(200vw, 0%);
+  transition: All 0.4s ease;
+}
+
+.sidebar-enter {
+  transform: rotate(0deg) scale(1) translate(0%, 0%);
+}

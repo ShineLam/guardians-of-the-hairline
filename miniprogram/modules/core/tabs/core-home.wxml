@@ -1,6 +1,6 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
 
-<view class="box pb-100">
+<view class="box pb-180">
   <view class="def-top">
     <view class="fx">
       <view class="avatar">

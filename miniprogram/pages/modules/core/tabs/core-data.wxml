@@ -1,3 +1,38 @@
-<view class="box">
-  THIS IS CORE DATA
+<view class="pb-180">
+  <scroll-view scroll-y scroll-into-view="{{scrollIntoVw}}" scroll-with-animation enable-back-to-top>
+    <view wx:for="{{brands}}" wx:key="index">
+      <view id="{{item.name}}" class="group-type">{{item.name}}</view>
+      <view wx:for="{{item.subs}}" wx:for-item="itm" wx:for-index="idx" wx:key="idx" data-i="{{index + '_' + idx}}" bindtap="onBrand">
+        <view class="group-item">
+          <view>
+            <image></image>
+          </view>
+          <text>{{itm.name}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="wrap-index" catch:touchmove="touchmove">
+  <view bindtap="onIndex" class="index {{flag == item ? 'active' : ''}}" wx:for="{{abc}}" wx:key="index" data-id="{{item}}">{{item}}</view>
+</view>
+
+<view class='mask' wx:if="{{show}}" bindtap='hideSide'></view>
+<view class="sidebar {{show ? 'sidebar-enter' : ''}}">
+  <view class="sidebar-content">
+    <scroll-view scroll-y scroll-with-animation>
+      <view wx:for="{{series}}" wx:key="index">
+        <view id="{{item.name}}" class="group-type">{{item.name}}</view>
+        <view wx:for="{{item.subs}}" wx:for-item="itm" wx:for-index="idx" wx:key="idx" data-i="{{index + '_' + idx}}" bindtap="onSeries">
+          <view class="group-item">
+            <view>
+              <image></image>
+            </view>
+            <text>{{itm.name}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
 </view>
