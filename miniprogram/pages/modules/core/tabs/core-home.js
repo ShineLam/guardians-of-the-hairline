@@ -1,6 +1,6 @@
 const { mixin, api, util, conf, isEqualList } = require('../../../../utils/mixin.js')
 const nav = [
-  { title: 'popup', ico: 'ico-popup', methods: 'open', params: { mask: true, maskClick: true, close: true } },
+  { title: 'popup', ico: 'ico-popup', methods: 'open', params: { mask: true, maskClick: true, close: true }, cb: 'popCb' },
   { title: 'dialog', ico: 'ico-dialog', methods: 'open', params: { type: 'dlg', title: '这是一个对话框', content: '这是一段文字' }, cb: 'dlgCb', fb: 'dlgFb' },
   { title: 'preview', ico: 'ico-preview', methods: 'open', params: {} },
   { title: 'pick-time', ico: 'ico-time', methods: 'open', params: {} },
@@ -31,7 +31,9 @@ Component(mixin.component({
   methods: {
     setUser(user) {
     },
-
+    popCb() {
+      console.log('关闭了popup')
+    },
     dlgCb() {
       console.log('点击了确定')
     },

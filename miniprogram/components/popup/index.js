@@ -10,30 +10,36 @@ Component({
 
   data: {
     show: false,
-    maskClick: true, // 遮罩允许点击
-    mask: true, // 是否有遮罩
-    close: true, // 是否有关闭按钮
-    zIndex: 0, // 层级
-    safeBtm: 0
+    maskClick: true,
+    mask: true,
+    close: true,
+    title: '',
+    zIndex: 0,
+    safeBtm: 0,
+    _cb: null
   },
 
   methods: {
-    open(params) {
+    open(params, cb) {
       params = params || {}
       this.setData({
         show: true,
-        maskClick: util.isEmpty(params?.maskClick) ? true : params.maskClick,
-        mask: util.isEmpty(params?.mask) ? true : params.mask,
+        maskClickable: util.isEmpty(params?.maskClickable) ? true : params.maskClickable,
+        mask: util.isEmpty(params?.mask) ? false : params.mask,
         close: util.isEmpty(params?.close) ? true : params.close,
+        title: params?.title || '',
         zIndex: (params?.zIndex - 0) || 0
       })
+      this.data._cb = cb || null
       !util.isNull(this.getTabBar()) && this.setSafebtm()
     },
     close() {
       this.setData({ show: false })
+      this.data._cb && this.data._cb()
+      this.data._cb = null
     },
     onMask() {
-      this.data.maskClick && this.close()
+      this.data.maskClickable && this.close()
     },
     setSafebtm() {
       let self = this
