@@ -1,9 +1,9 @@
 <wxs src="../../filters/core.wxs" module="f" />
 
-<view class="mask {{mask ? 'no-bg' : ''}}" style="z-index: {{600 + zIndex}}" wx:if="{{show}}" bindtap='onMask'></view>
+<view class="mask {{!mask ? 'no-bg' : ''}}" style="z-index: {{600 + zIndex}}" wx:if="{{show}}" bindtap='onMask'></view>
 <view class="pop-up {{show ? 'pop-up-enter' : 'pop-up-exit'}}" style="z-index: {{601 + zIndex}};bottom: {{safeBtm}}px">
-  <view class='ico-close' wx:if="{{!close}}" bindtap='close'>
-    <image class="img" src="{{f.imgPath('ico-close')}}"></image>
+  <view class='ico-close' wx:if="{{close}}" bindtap='close'>
+    <image class="img" src="{{f.imgpath('ico-close')}}"></image>
   </view>
   <slot />
 </view>

@@ -6,7 +6,7 @@
 <view class='mask' wx:if="{{showSidebar}}" data-elem='showSidebar' bindtap='onDrawer'></view>
 <view class="rolebar {{showSidebar ? 'rolebar-enter' : ''}}">
   <view>
-    <view class="fnt-40 fwb p-b-40">切换角色</view>
+    <view class="fnt-40 fwb pb-40">切换角色</view>
   </view>
   <view class="ptb-24" wx:for="{{nav}}" wx:key="index" data-i="{{index}}" bindtap="onNav">{{item.name}}</view>
 </view>

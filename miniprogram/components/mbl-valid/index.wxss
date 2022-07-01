@@ -29,7 +29,7 @@
   line-height: 306rpx;
   font-size: 32rpx;
   color: #fff;
-  background: #2AA371;
+  background: #CC2B22;
 }
 
 /*  */
@@ -73,7 +73,7 @@
 }
 
 .btn.sub.bor {
-  color: #2AA371;
-  border: 1rpx solid #2AA371;
+  color: #CC2B22;
+  border: 1rpx solid #CC2B22;
   background: #fff;
 }

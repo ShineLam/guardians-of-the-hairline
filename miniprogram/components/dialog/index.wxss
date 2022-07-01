@@ -52,7 +52,7 @@
 }
 
 .dialog-btn > .vw:last-of-type {
-  color: #2AA371;
+  color: #CC2B22;
 }
 
 .ico-close {

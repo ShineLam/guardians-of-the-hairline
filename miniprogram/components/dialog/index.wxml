@@ -5,7 +5,7 @@
       <image class="img" src="{{filter.setImgUrl('ico-close')}}"></image>
     </view>
     <view class="fnt-32 fwb txt-cnt pt-40" wx:if="{{title}}">{{title}}</view>
-    <view class='plr-32 p-t p-b txt-cnt' wx:if="{{content}}">
+    <view class='plr-32 pt-32 pb-40 txt-cnt' wx:if="{{content}}">
       <view>{{content}}</view>
     </view>
     <view>

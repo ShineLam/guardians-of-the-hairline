@@ -12,11 +12,11 @@ Component(mixin.component({
     maskClick: true,
     close: false,
     type: '', // 确认框: cfm, 对话框: dlg, 弹窗: ''
-    title: '',
-    cnlTxt: '取消',
-    cfmTxt: '确定',
-    content: '',
-    zIndex: 0,
+    title: '', // 标题
+    cnlTxt: '取消', // 取消按钮文字
+    cfmTxt: '确定', // 确定按钮文字
+    content: '', // 文本内容
+    zIndex: 0, // 层级
     _cb: null,
     _fb: null
   },
@@ -24,14 +24,14 @@ Component(mixin.component({
     open(params, cb, fb) {
       this.setData({
         show: true,
-        title: params && (params.title || ''),
-        content: params && (params.content || ''),
-        cnlTxt: params && (params.cnlTxt || '取消'),
-        cfmTxt: params && (params.cfmTxt || '确定'),
-        close: params && (util.isEmpty(params.close) ? false : params.close),
-        type: params && (util.isEmpty(params.type) ? '' : params.type),
-        maskClick: params && (util.isEmpty(params.maskClick) ? true : params.maskClick),
-        zIndex: params && (params.zIndex || 0)
+        title: params?.title || '',
+        content: params?.content || '',
+        cnlTxt: params?.cnlTxt || '取消',
+        cfmTxt: params?.cfmTxt || '确定',
+        close: util.isEmpty(params?.close) ? false : params.close,
+        type: util.isEmpty(params?.type) ? '' : params.type,
+        maskClick: util.isEmpty(params.maskClick) ? true : params.maskClick,
+        zIndex: (params?.zIndex - 0) || 0
       })
       this.data._cb = cb || null
       this.data._fb = fb
@@ -48,7 +48,6 @@ Component(mixin.component({
       }
     },
     _onCfm() {
-      console.log('点击确认')
       if (this.data._cb) {
         this.data._cb()
         this.data._cb = null
@@ -56,7 +55,6 @@ Component(mixin.component({
       this.close()
     },
     _onCnl() {
-      console.log('点击取消')
       if (this.data._fb) {
         this.data._fb()
         this.data._fb = null

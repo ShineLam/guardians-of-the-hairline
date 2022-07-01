@@ -1,7 +1,7 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
 <import src="/templates/no-data.wxml" />
 
-<view class="box bg-f3 p-b">
+<view class="box bg-f3 pb-40">
   <view class="wrap-fixed on-top">  
     <view class="sch-wrap">
       <input data-p="query.nameLK" value="{{query.nameLK}}" bindinput="onInput" placeholder="输入票券名称搜索"></input>
@@ -40,7 +40,7 @@
 
     <!-- 进行中 >> -->
     <view class="wrap plr-32 pt-32 pb-20 mlr-32mt-24" wx:if="{{stats == 1}}">
-      <view class="fx jc-sb p-b">
+      <view class="fx jc-sb pb-40">
         <view class="fnt-28 fwb">{{item.name}}</view>
         <view data-i="{{index}}" catchtap="onEdit">
           <image class="ico-edit" src="{{f.imgpath('ico-edit')}}"></image>
@@ -59,7 +59,7 @@
         <view class="fx jc-sb pb-24 fnt-26">
           <view>派票进度</view>
           <view class="fx jc-sb wt-56">
-            <progress class="pgs" border-radius="14" percent="{{(item.sndCnt/item.allCnt) * 100}}" activeColor="#2AA371" backgroundColor="#F3F5F4" active></progress>
+            <progress class="pgs" border-radius="14" percent="{{(item.sndCnt/item.allCnt) * 100}}" activeColor="#CC2B22" backgroundColor="#F3F5F4" active></progress>
             <view class="fwb ml-16">
               <text class="clr-2a">{{item.sndCnt}}</text>/<text>{{item.allCnt}}</text>
             </view>
@@ -74,7 +74,7 @@
             </view>
           </view>
         </view>
-        <view class="fnt-24 clr-93 p-b b-b">
+        <view class="fnt-24 clr-93 pb-40 b-b">
           <view>适用场地: {{item.siteNm || '所有场地'}}</view>
           <view class="wb-ba pt-4">票券说明: {{item.rmk}}</view>
         </view>

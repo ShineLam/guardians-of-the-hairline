@@ -43,6 +43,10 @@
   padding-top: 4rpx;
 }
 
+.pt-8 {
+  padding-top: 8rpx;
+}
+
 .pt-16 {
   padding-top: 16rpx;
 }

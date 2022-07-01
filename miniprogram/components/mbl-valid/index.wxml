@@ -21,7 +21,7 @@
 
   <!-- 自定义校验手机 -->
   <view wx:if="{{validType == 'custom'}}">
-    <view class="pt-40 p-b plr-40">
+    <view class="pt-40 pb-40 plr-40">
       <view wx:if="{{kbType == 'num_mbl'}}">
         <view class="lft-arr" bindtap="onBack"></view>
         <view class="p-tb-48">
@@ -29,7 +29,7 @@
           <view class="fnt-28 clr-62 pt-16">{{desc}}</view>
         </view>
         <view class="">
-          <view class="p-t-8">
+          <view class="pt-8">
             <view class="ipt-wrap">
               <view class="inp no-pl-32">{{form.mbl}}</view>
             </view>
@@ -37,13 +37,13 @@
           </view>
         </view>
       </view>
-      <view class="p-b" wx:else>
-        <view class="p-b-48">
+      <view class="pb-40" wx:else>
+        <view class="pb-40">
           <view class="fnt-40">{{title}}(2/2)</view>
           <view class="fnt-28 clr-62 pt-4" wx:if="{{showTips}}">短信验证码已发送至{{form.mbl}}</view>
         </view>
         <view>
-          <view class="p-t-8">
+          <view class="pt-8">
             <view class="fx fx-one fnt-48 txt-cnt p-tb-16 code-inp">
               <view class="vw" wx:for="{{6}}" wx:key="index">{{form.smsCode[index]}}</view>
             </view>

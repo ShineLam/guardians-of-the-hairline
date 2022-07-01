@@ -80,7 +80,7 @@
 }
 
 .clr-2a {
-  color: #2AA371;
+  color: #CC2B22;
 }
 
 .clr-ff {
@@ -126,5 +126,5 @@
 }
 
 .bg-2a{
-  background: #2AA371;
+  background: #CC2B22;
 }

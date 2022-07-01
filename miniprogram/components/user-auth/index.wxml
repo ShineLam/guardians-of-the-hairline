@@ -3,7 +3,7 @@
 
 <dialog id="dialog">
   <view class="auth-wrap">
-    <view class="fnt fwb p-b">服务授权</view>
+    <view class="fnt fwb pb-40">服务授权</view>
     <view class="fnt-28 pb-20">正常使用小程序功能,请点击"同意授权",将获取头像、昵称等信息</view>
     <!-- 确认按钮 -->
     <view class="fx jc-sb fx-one pt-40" wx:if="{{cfm == 0}}">
