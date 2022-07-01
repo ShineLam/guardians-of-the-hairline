@@ -1,6 +1,6 @@
 const { mixin, api, util, conf, isEqualList } = require('../../../../utils/mixin.js')
 const nav = [
-  { title: 'popup', ico: 'ico-popup', methods: 'open', params: {} },
+  { title: 'popup', ico: 'ico-popup', methods: 'open', params: { mask: false, maskClick: false } },
   { title: 'dialog', ico: 'ico-dialog', methods: 'open', params: {} },
   { title: 'preview', ico: 'ico-preview', methods: 'open', params: {} },
   { title: 'pick-time', ico: 'ico-time', methods: 'open', params: {} },
@@ -31,6 +31,7 @@ Component(mixin.component({
   methods: {
     setUser(user) {
     },
+
     onNav(e) {
       let i = e.currentTarget.dataset.i
       let item = nav[i]
