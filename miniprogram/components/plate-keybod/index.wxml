@@ -3,44 +3,47 @@
 <popup id="popup">
   <view class="wrap bor-20">
     <view class="plr-40 ptb-32">
-      <view class='input-area'>
-        <view class='vw {{index == 7 && str.length < 8 ? "new-energy" : ""}} {{(index === str.length) && str.length < 8 ? "active" : ""}}' wx:for="{{8}}" wx:key="index" data-i='{{index}}' bindtap='onItem'>
+      <view class="input-area">
+        <view class="vw {{index == 7 && str.length < 8 ? 'new-energy' : ''}} {{(index === str.length) && str.length < 8 ? 'active' : ''}}" wx:for="{{8}}" wx:key="index" data-i="{{index}}" bindtap="onItem">
           <text wx:if="{{str.length > index}}">{{str[index]}}</text>
           <text wx:if="{{index == 7 && str.length < 8}}">新能源</text>
         </view>
       </view>
     </view>
-    <view class='kb-pro' wx:if="{{!str}}">
+    <view class="kb-pro" wx:if="{{!str}}">
       <view class="vw">
-        <block wx:for="{{provArr}}" wx:key="index">
-          <button class="btn" data-i="{{item}}" bindtap='_onKey' wx:if="{{index <= 9}}" hover-class="hover-class">{{item}}</button>
+        <block wx:for="{{provs}}" wx:key="index">
+          <button class="btn" data-i="{{item}}" bindtap="_onKey" wx:if="{{index <= 9}}" hover-class="hover-class">{{item}}</button>
         </block>
       </view>
       <view class="vw">
-        <block wx:for="{{provArr}}" wx:key="index">
-          <button class="btn" data-i="{{item}}" bindtap='_onKey' wx:if="{{index >= 10 && index <= 18}}" hover-class="hover-class">{{item}}</button>
+        <block wx:for="{{provs}}" wx:key="index">
+          <button class="btn" data-i="{{item}}" bindtap="_onKey" wx:if="{{index >= 10 && index <= 18}}" hover-class="hover-class">{{item}}</button>
         </block>
       </view>
       <view class="vw">
-        <block wx:for="{{provArr}}" wx:key="index">
-          <button class="btn" data-i="{{item}}" bindtap='_onKey' wx:if="{{index >= 19 && index <= 26}}" hover-class="hover-class">{{item}}</button>
+        <block wx:for="{{provs}}" wx:key="index">
+          <button class="btn" data-i="{{item}}" bindtap="_onKey" wx:if="{{index >= 19 && index <= 26}}" hover-class="hover-class">{{item}}</button>
         </block>
       </view>
       <view class="vw">
-        <block wx:for="{{provArr}}" wx:key="index">
-          <button class="btn" data-i="{{item}}" bindtap='_onKey' wx:if="{{index > 26}}" hover-class="hover-class">{{item}}</button>
+        <block wx:for="{{provs}}" wx:key="index">
+          <button class="btn" data-i="{{item}}" bindtap="_onKey" wx:if="{{index > 26}}" hover-class="hover-class">{{item}}</button>
         </block>
       </view>
     </view>
-    <view class='fx fw kb' wx:else>
-      <block wx:for="{{numArr}}" wx:key="index">
-        <button class="btn" data-i="{{item}}" disabled='{{str.length < 2}}' bindtap='_onKey' hover-class="hover-class">{{item}}</button>
+    <view class="fx fw kb" wx:else>
+      <block wx:for="{{nums}}" wx:key="index">
+        <button class="btn" data-i="{{item}}" disabled="{{str.length < 2}}" bindtap="_onKey" hover-class="hover-class">{{item}}</button>
       </block>
-      <block wx:for="{{lettArr}}" wx:key="index">
-        <button class="btn" data-i="{{item}}" disabled='{{(index == 25 || index == 26) && (str[0] + str[1] != "粤Z")}}' bindtap='_onKey' hover-class="hover-class">{{item}}</button>
+      <block wx:for="{{letters}}" wx:key="index">
+        <button class="btn" data-i="{{item}}" bindtap="_onKey" hover-class="hover-class">{{item}}</button>
+      </block>
+      <block wx:for="{{suffixs}}" wx:key="index">
+        <button class="btn" data-i="{{item}}" bindtap="_onKey" hover-class="hover-class" disabled="{{str.length !== 6}}">{{item}}</button>
       </block>
     </view>
-    <button class='fx jc-cnt btn-del ab' data-i="-1" bindtap='_onKey' hover-class="hover-class">
+    <button class="fx jc-cnt btn-del" data-i="c" bindtap="_onKey" hover-class="hover-class">
       <image class="ico-del" src="{{f.imgpath('ico-del')}}"></image>
     </button>
   </view>

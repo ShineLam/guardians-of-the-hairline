@@ -73,7 +73,5 @@
 }
 
 .btn.sub.bor {
-  color: #CC2B22;
-  border: 1rpx solid #CC2B22;
   background: #fff;
 }

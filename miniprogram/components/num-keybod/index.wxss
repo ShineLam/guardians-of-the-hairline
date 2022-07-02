@@ -23,29 +23,6 @@
   padding-right: 0;
 }
 
-/* 删除按钮 */
-.btn-del {
-  width: 130rpx !important;
-  height: 84rpx;
-  background: #F0F0F0 !important;
-  box-shadow: 0 2rpx 4rpx 0 rgba(147, 153, 150, 1);
-}
-
-.btn-del.ab {
-  position: absolute;
-  right: 14rpx;
-  bottom: 20rpx;
-}
-
-.btn-del.hover-class {
-  background: rgba(173, 180, 189, 0.5) !important;
-}
-
-.ico-del {
-  width: 46rpx;
-  height: 36rpx;
-}
-
 .num {
   height: 400rpx;
 }
@@ -54,4 +31,13 @@
   width: 31%;
   margin-left: 1%;
   margin-right: 1%;
+}
+
+.hover-class {
+  background: rgba(173, 180, 189, 0.5) !important;
+}
+
+.ico-del {
+  width: 56rpx;
+  height: 56rpx;
 }

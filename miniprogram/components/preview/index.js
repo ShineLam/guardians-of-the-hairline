@@ -12,9 +12,13 @@ Component(mixin.component({
 
   methods: {
     open(urls, current) {
-      urls = this.mapUrls(urls)
-      current = urls[current]
-      wx.previewImage({ urls, current })
+      if (util.isEmpty(urls)) {
+        urls = this.mapUrls(urls)
+        current = urls[current]
+        wx.previewImage({ urls, current })
+      } else {
+        util.toast('请传入预览的图片')
+      }
     },
     mapUrls(urls) {
       urls = util.isArray(urls) ? urls : [urls]

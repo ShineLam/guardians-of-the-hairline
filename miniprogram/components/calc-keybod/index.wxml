@@ -28,7 +28,7 @@
     </view>
     <view class="keybod">
       <view class="num">
-        <block wx:for="{{numArr}}" wx:key="index">
+        <block wx:for="{{nums}}" wx:key="index">
           <view class="key itm-1" data-v="{{item}}" bindtap="_onKey">{{item}}</view>
         </block>
         <view class="key" data-v="c" bindtap="_onKey">

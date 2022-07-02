@@ -25,7 +25,7 @@ Component({
       this.setData({
         show: true,
         maskClickable: util.isEmpty(params?.maskClickable) ? true : params.maskClickable,
-        mask: util.isEmpty(params?.mask) ? false : params.mask,
+        mask: util.isEmpty(params?.mask) ? true : params.mask,
         close: util.isEmpty(params?.close) ? true : params.close,
         title: params?.title || '',
         zIndex: (params?.zIndex - 0) || 0

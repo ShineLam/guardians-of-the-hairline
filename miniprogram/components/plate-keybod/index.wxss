@@ -45,9 +45,6 @@
   height: 84rpx;
   background: #F0F0F0 !important;
   box-shadow: 0 2rpx 4rpx 0 rgba(147, 153, 150, 1);
-}
-
-.btn-del.ab {
   padding: 0;
   position: absolute;
   right: 14rpx;
@@ -92,7 +89,7 @@
 }
 
 .input-area .active {
-  border: 1rpx solid #2D2D2D;
+  border: 1rpx solid #ccc;
 }
 
 .input-area .new-energy {

@@ -12,5 +12,10 @@
 }
 
 .auth-wrap .btn {
+  font-size: 32rpx;
   padding: 20rpx 0;
+}
+
+.auth-wrap .btn.sub {
+  color: #999;
 }

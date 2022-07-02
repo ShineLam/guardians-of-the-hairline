@@ -30,7 +30,7 @@ Component(mixin.component({
         cfmTxt: params?.cfmTxt || '确定',
         close: util.isEmpty(params?.close) ? false : params.close,
         type: util.isEmpty(params?.type) ? '' : params.type,
-        maskClick: util.isEmpty(params.maskClick) ? true : params.maskClick,
+        maskClick: util.isEmpty(params?.maskClick) ? true : params.maskClick,
         zIndex: (params?.zIndex - 0) || 0
       })
       this.data._cb = cb || null

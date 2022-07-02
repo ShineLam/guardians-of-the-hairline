@@ -30,39 +30,39 @@ const APP_TAB_BAR = {
     "pagePath": "pages/tabs/home/tab-home",
     "iconPath": "/images/tab-home.png",
     "selectedIconPath": "/images/tab-home.png",
-    "text": "首页"
+    "text": "HOME"
   },
   {
     "pagePath": "pages/tabs/data/tab-data",
     "iconPath": "/images/tab-data.png",
     "selectedIconPath": "/images/tab-data.png",
-    "text": "数据"
+    "text": "DATA"
   },
   {
     "pagePath": "pages/tabs/profile/tab-profile",
     "iconPath": "/images/tab-profile.png",
     "selectedIconPath": "/images/tab-profile.png",
-    "text": "设置"
+    "text": "MINE"
   }
   ]
 }
 
 // TabBar定义
 const TABS_core = [{
-  text: '首页'
+  text: 'HOME'
 }, {
-  text: '数据'
+  text: 'DATA'
 }, {
-  text: '我的'
+  text: 'MINE'
 }]
 
 // TabBar定义.管理端
 const TABS_admin = [{
-  text: '首页'
+  text: 'HOME'
 }, {
   show: false
 }, {
-  text: '我的'
+  text: 'MINE'
 }]
 
 // 应用菜单

@@ -43,19 +43,19 @@
         "pagePath": "pages/tabs/home/tab-home",
         "iconPath": "/images/tab-home.png",
         "selectedIconPath": "/images/tab-home.png",
-        "text": "首页"
+        "text": "HOME"
       },
       {
         "pagePath": "pages/tabs/data/tab-data",
         "iconPath": "/images/tab-data.png",
         "selectedIconPath": "/images/tab-data.png",
-        "text": "数据"
+        "text": "DATA"
       },
       {
         "pagePath": "pages/tabs/profile/tab-profile",
         "iconPath": "/images/tab-profile.png",
         "selectedIconPath": "/images/tab-profile.png",
-        "text": "设置"
+        "text": "MINE"
       }
     ]
   },

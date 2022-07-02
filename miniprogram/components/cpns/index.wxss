@@ -62,6 +62,10 @@
   width: 224rpx;
   height: 82rpx;
   line-height: 82rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(91deg, #F47155 0%, #F0574E 100%);
   border-radius: 44rpx;
   padding: 0;
   margin: 0;

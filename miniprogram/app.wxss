@@ -16,3 +16,56 @@ page,
   position: relative;
   overflow-x: hidden;
 }
+
+
+/* 多选框 */
+
+checkbox-group label {
+  display: flex;
+  align-items: center;
+}
+
+checkbox .wx-checkbox-input {
+  box-sizing: border-box;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #2D2D2D;
+  border: 0;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+/* 单选 */
+
+radio-group label {
+  display: flex;
+  align-items: center;
+}
+
+radio .wx-radio-input {
+  width: 24rpx;
+  height: 24rpx;
+  overflow: hidden;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+  border-color: #2D2D2D !important;
+  background: none !important;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  background: #2D2D2D;
+}

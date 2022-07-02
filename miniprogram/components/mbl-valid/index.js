@@ -68,13 +68,6 @@ Component(mixin.component({
       this.popup.close()
       this.reset()
     },
-
-    // 弹出框点击
-    onPopuptap(e) {
-      if (!this.data.validType) {
-        this.close()
-      }
-    },
     
     onChangeValidType(e) {
       let validType = e.currentTarget.dataset.validtype

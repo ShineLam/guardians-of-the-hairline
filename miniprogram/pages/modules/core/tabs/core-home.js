@@ -3,10 +3,10 @@ const nav = [
   { title: 'popup', ico: 'ico-popup', methods: 'open', params: { mask: true, maskClick: true, close: true }, cb: 'popCb' },
   { title: 'dialog', ico: 'ico-dialog', methods: 'open', params: { type: 'dlg', title: '这是一个对话框', content: '这是一段文字' }, cb: 'dlgCb', fb: 'dlgFb' },
   { title: 'preview', ico: 'ico-preview', methods: 'open', params: {} },
-  { title: 'pick-time', ico: 'ico-time', methods: 'open', params: {} },
+  { title: 'pick-time', ico: 'ico-time', methods: 'open', params: {}, cb: 'pickCb' },
   { title: 'plate-keybod', ico: 'ico-k-plate', methods: 'open', params: {} },
-  { title: 'num-keybod', ico: 'ico-k-num', methods: 'open', params: {} },
-  { title: 'calc-keybod', ico: 'ico-k-calc', methods: 'open', params: {} },
+  { title: 'num-keybod', ico: 'ico-k-num', methods: 'open', params: { type: 'dot' }, cb: 'numCb' },
+  { title: 'calc-keybod', ico: 'ico-k-calc', methods: 'open', params: { str: 1000 }, cb: 'calcCb' },
   { title: 'mbl-valid', ico: 'ico-phone', methods: 'open', params: {} },
   { title: 'user-auth', ico: 'ico-auth', methods: 'open', params: {} },
   { title: 'cpns', ico: 'ico-cpns', methods: 'open', params: {} },
@@ -39,6 +39,15 @@ Component(mixin.component({
     },
     dlgFb() {
       console.log('点击了取消')
+    },
+    pickCb(time) {
+      util.toast(time)
+    },
+    numCb(num) {
+      util.toast(num)
+    },
+    calcCb(num) {
+      util.toast(num)
     },
     onNav(e) {
       let i = e.currentTarget.dataset.i

@@ -19,9 +19,9 @@ Component(mixin.component({
     // 打开组件(开放给页面调用)
     open(opts, cb, fb) {
       this.ctx = { opts, cb, fb }
-      this.setData({
-        cfm: 1
-      })
+      // this.setData({
+      //   cfm: 1
+      // })
       api.checkUserSession(ok => {
         this.dialog.open()
       }, nk => {

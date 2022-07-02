@@ -2,37 +2,45 @@
 
 /* 自定义弹窗 */
 
+.wrap-dialog {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  transform: scale(0, 0);
+}
+
+.wrap-dialog.enter {
+  transform: scale(1, 1);
+}
+
 .dialog {
-  width: 80%;
+  width: 80vw;
+  height: auto;
   background: #fff;
   border-radius: 12rpx;
   margin: auto;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 20vh;
   opacity: 0;
   overflow: hidden;
-  transform: scale(0.5, 0.5);
-  -webkit-transform: scale(0.5, 0.5);
-  transition: All 0.2s ease;
-  -webkit-transition: All 0.2s ease;
+  transform: scale(0, 0);
+  transition: all 0.2s ease;
 }
 
-.dialog-s {
-  top: 30%;
-}
-
-.dialog-enter {
+.dialog.enter {
   opacity: 1;
   transform: scale(1, 1);
-  -webkit-transform: scale(1, 1);
   z-index: 1000;
 }
 
-.dialog .fnt {
-  background: #f8f8f8;
-  padding: 36rpx 40rpx 32rpx;
+.dialog.exit {
+  transform: scale(0, 0);
 }
 
 .dialog-btn {

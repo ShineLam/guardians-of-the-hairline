@@ -6,6 +6,7 @@ Component(mixin.component({
   },
 
   data: {
+    past: true, // 可选过去时间(暂未实现)
     years: [],
     months: [],
     days: [],
@@ -15,10 +16,13 @@ Component(mixin.component({
     _cb: null
   },
   methods: {
-    open(cb) {
+    open(params, cb) {
+      this.setData({
+        past: util.isEmpty(params?.past) ? true : params.past
+      })
       this.data._cb = cb || null
       this.init()
-      this.popup.open()
+      this.popup.open({ close: false })
     },
     close() {
       this.popup.close()
@@ -61,15 +65,11 @@ Component(mixin.component({
       let minutes = util.fromto(0, 59, true)
       let value = this.select(today, years)
       this.setData({
-        value
-      })
-      this.setData({
         years,
         months,
         days,
         hours,
-        minutes,
-        value
+        minutes
       })
       this.setData({
         value
@@ -111,6 +111,9 @@ Component(mixin.component({
       this.setData({
         value
       })
+    },
+    onEnded() {
+      
     },
     onCnl() {
       this.close()

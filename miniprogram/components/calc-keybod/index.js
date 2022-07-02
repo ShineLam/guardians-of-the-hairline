@@ -1,6 +1,6 @@
 const { mixin, api, util, conf } = require('../../utils/mixin.js')
 
-const numArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0']
+const nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0']
 // 计算表达式
 const expressions = []
 // 小数精度，默认2位有效小数
@@ -12,7 +12,7 @@ Component(mixin.component({
   },
   properties: {},
   data: {
-    numArr,
+    nums,
     title: '',
     orgStr: '',
     tipslen: 0,
@@ -25,7 +25,7 @@ Component(mixin.component({
     open(params, cb) {
       let str = util.isNull(params.str) ? '' : this.trim0(params.str.toString().trim())
       let zIndex = params?.zIndex || 0
-      let mask = params?.mask || false
+      let mask = params?.mask || true
       this.setData({
         title: params?.title || '金额',
         orgStr: str
