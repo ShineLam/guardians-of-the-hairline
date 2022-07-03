@@ -12,9 +12,10 @@ Component(mixin.component({
 
   methods: {
     open(urls, current) {
-      if (util.isEmpty(urls)) {
-        urls = this.mapUrls(urls)
-        current = urls[current]
+      if (!util.isEmpty(urls)) {
+        // urls = this.mapUrls(urls)
+        current = urls[current || 0]
+        console.log(urls)
         wx.previewImage({ urls, current })
       } else {
         util.toast('请传入预览的图片')

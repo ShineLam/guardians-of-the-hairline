@@ -1,5 +1,6 @@
 const { mixin, api, util, conf } = require('../../../../utils/mixin.js')
 let timestamp = new Date().getTime()
+let db = wx.cloud.database()
 
 Component(mixin.component({
   options: {
@@ -13,101 +14,28 @@ Component(mixin.component({
     scrollIntoVw: '',
     indexPos: [],
     abc: [],
-    brands: [
-      {
-        name: 'A', subs: [
-          { name: '奥迪' },
-          { name: '阿尔法·罗密欧' }
-        ]
-      }, {
-        name: 'B', subs: [
-          { name: '比亚迪' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: 'Brooke' }
-        ]
-      }, {
-        name: 'C', subs: [
-          { name: '奥迪' },
-          { name: '奥迪' },
-          { name: '奥迪' },
-          { name: '奥迪' },
-          { name: '奥迪' },
-          { name: '奥迪' },
-          { name: '奥迪' },
-          { name: '阿尔法·罗密欧' }
-        ]
-      }, {
-        name: 'D', subs: [
-          { name: '比亚迪' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: 'Brooke' }
-        ]
-      }, {
-        name: 'E', subs: [
-          { name: '奥迪' },
-          { name: '阿尔法·罗密欧' }
-        ]
-      }, {
-        name: 'F', subs: [
-          { name: '比亚迪' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: '宝马' },
-          { name: '别克' },
-          { name: 'Brooke' }
-        ]
-      },
-    ],
-    series: [
-      {
-        name: '一汽奥迪', subs: [
-          { name: 'A3' },
-          { name: 'A4' },
-          { name: 'A4L' },
-          { name: 'A6L' },
-          { name: 'A8' },
-          { name: 'Q3' },
-          { name: 'Q5' },
-          { name: 'S3' }
-        ]
-      }, {
-        name: '进口奥迪', subs: [
-          { name: 'A3' },
-          { name: 'A4' },
-          { name: 'A4L' },
-          { name: 'A6L' },
-          { name: 'A8' },
-          { name: 'Q3' },
-          { name: 'Q5' },
-          { name: 'S3' },
-          { name: 'S3' }
-        ]
-      },
-    ]
+    list: []
   },
   methods: {
+    getList() {
+      db.collection('contacts').get().then(res => {
+        let list = res.data || []
+        list = this.addCat(list).groupBy('cat')
+        let abc = this.fetchABC(list)
+        this.setData({ list, abc })
+      })
+    },
+    addCat(list) {
+      list = list || []
+      list.forEach(item => {
+        item.cat = item.name.substring(0, 1)
+      })
+      return list
+    },
+    fetchABC(list) {
+      list = list || []
+      return list.fetch('name')
+    },
     initABC() {
       const CHARCODE_A = 'A'.charCodeAt(0)
       let abc = new Array(26).fill(null).map((v, i) => String.fromCharCode(CHARCODE_A + i))
@@ -142,10 +70,10 @@ Component(mixin.component({
       let id = e.currentTarget.dataset.id
       this.scroll2Vw(id)
     },
-    onBrand(e) {
+    onItem(e) {
       let [index, idx] = e.currentTarget.dataset.i.split('_')
-      let item = this.data.brands[index].subs[idx]
-      console.log(item)
+      let item = this.data.list[index].subs[idx]
+      this.setData({ item })
       this.showSide()
     },
     onSeries(e) {
@@ -164,13 +92,13 @@ Component(mixin.component({
   },
   ready() {
     this.initABC()
+    this.getList()
     let self = this
     wx.createSelectorQuery()
       .in(this) // 页面中不需要，组件内需指定
       .selectAll('.wrap-index .index')
       .boundingClientRect()
       .exec(function (res) {
-        console.log(res)
         let indexPos = res[0]
         self.setData({ indexPos })
       })
