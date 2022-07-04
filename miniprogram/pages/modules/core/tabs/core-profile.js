@@ -1,4 +1,5 @@
 const { mixin, api, util, conf } = require('../../../../utils/mixin.js')
+const db = wx.cloud.database()
 
 Component(mixin.component({
   options: {
@@ -6,10 +7,27 @@ Component(mixin.component({
   },
   properties: {},
   data: {
-    user: {}
+    user: {},
+    imgs: []
   },
 
   methods: {
-
+    getImgs() {
+      db.collection('imgs').get().then(res => {
+        let imgs = res.data || []
+        imgs = imgs.fetch('src')
+        this.setData({ imgs })
+      })
+    },
+    opnPreview(e) {
+      let i = e.currentTarget.dataset.i
+      let imgs = this.data.imgs
+      console.log(i, imgs[i])
+      this.preview.open(imgs, imgs[i])
+    }
+  },
+  ready() {
+    this.preview = this.selectComponent('#preview')
+    this.getImgs()
   }
 }))

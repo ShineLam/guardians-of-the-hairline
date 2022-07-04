@@ -1,11 +1,8 @@
 const { mixin, api, util, conf, isEqualList } = require('../../../../utils/mixin.js')
+
 const nav = [
   { title: 'popup', ico: 'ico-popup', methods: 'open', params: { mask: true, maskClick: true, close: true }, cb: 'popCb' },
   { title: 'dialog', ico: 'ico-dialog', methods: 'open', params: { type: 'dlg', title: '这是一个对话框', content: '这是一段文字' }, cb: 'dlgCb', fb: 'dlgFb' },
-  { title: 'preview', ico: 'ico-preview', methods: 'open', params: [
-    '/images/qrcode-dy.png',
-    '/images/qrcode-wv.png',
-  ] },
   { title: 'pick-time', ico: 'ico-time', methods: 'open', params: {}, cb: 'pickCb' },
   { title: 'plate-keybod', ico: 'ico-k-plate', methods: 'open', params: {} },
   { title: 'num-keybod', ico: 'ico-k-num', methods: 'open', params: { type: 'dot' }, cb: 'numCb' },
@@ -14,14 +11,7 @@ const nav = [
   { title: 'user-auth', ico: 'ico-auth', methods: 'open', params: {} },
   { title: 'cpns', ico: 'ico-cpns', methods: 'open', params: {} }
 ]
-// const cloud = require('wx-server-sdk');
 
-// cloud.init({
-//   env: cloud.DYNAMIC_CURRENT_ENV
-// });
-
-// const db = cloud.database();
-// console.log(111, db)
 
 Component(mixin.component({
   options: {
@@ -37,7 +27,8 @@ Component(mixin.component({
   data: {
     nav,
     user: {},
-    list: []
+    list: [],
+    imgs: []
   },
   methods: {
     setUser(user) {

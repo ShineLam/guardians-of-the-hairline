@@ -1,6 +1,6 @@
 const { mixin, api, util, conf } = require('../../../../utils/mixin.js')
+const db = wx.cloud.database()
 let timestamp = new Date().getTime()
-let db = wx.cloud.database()
 
 Component(mixin.component({
   options: {

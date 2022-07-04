@@ -12,17 +12,16 @@
       <view>{{item.title}}</view>
     </view>
   </view>
+  <view class="wrap-imgs">
+    <upload-img id="upload-img"></upload-img>
+  </view>
 
   <template is="any-page" />
   <cpns id="cpns"></cpns>
   <dialog id="dialog"></dialog>
   <popup id="popup"></popup>
-  <preview id="preview"></preview>
   <pick-time id="pick-time"></pick-time>
   <plate-keybod id="plate-keybod"></plate-keybod>
   <calc-keybod id="calc-keybod"></calc-keybod>
   <num-keybod id="num-keybod"></num-keybod>
-  <view class="wrap-imgs">
-    <upload-img id="upload-img"></upload-img>
-  </view>
 </view>

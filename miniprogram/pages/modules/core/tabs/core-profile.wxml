@@ -1,5 +1,8 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
 
-<view>
-  THIS IS CORE PROFILE
+<view class="qrcode-video">
+  <image src="{{f.imgpath('ico-dy')}}" data-i="0" bindtap="opnPreview"></image>
+  <image src="{{f.imgpath('ico-wv')}}" data-i="1" bindtap="opnPreview"></image>
 </view>
+
+<preview id="preview"></preview>
