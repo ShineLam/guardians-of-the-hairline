@@ -59,7 +59,12 @@
 }
 
 .wt {
-  width: 100% !important;
+  width: 100vw;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
 }
 
 /* 文本 */
@@ -95,10 +100,16 @@
 
 /* 头像 */
 
+
+/* 头像 */
 .avatar {
-
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 1rpx solid #ebebeb;
+  box-shadow: 2rpx 2rpx 10rpx #ebebeb;
+  overflow: hidden;
 }
-
 
 /* 箭头/三角形 */
 

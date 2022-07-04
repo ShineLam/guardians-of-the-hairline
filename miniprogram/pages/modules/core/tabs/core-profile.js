@@ -12,7 +12,7 @@ Component(mixin.component({
   },
 
   methods: {
-    getImgs() {
+    getList() {
       db.collection('imgs').get().then(res => {
         let imgs = res.data || []
         imgs = imgs.fetch('src')
@@ -32,6 +32,6 @@ Component(mixin.component({
   },
   ready() {
     this.preview = this.selectComponent('#preview')
-    this.getImgs()
+    this.getList()
   }
 }))

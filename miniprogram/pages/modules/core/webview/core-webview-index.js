@@ -2,11 +2,10 @@ const { mixin, api, util, conf, isEqualList } = require('../../../../utils/mixin
 
 Page(mixin.page({
   data: {
-    url
+    url: ''
   },
   onLoad(opts) {
-    let url = opts.url || ''
-    console.log(111111, opts)
+    let url = decodeURIComponent(opts.url) || ''
     this.setData({ url })
   }
 }))
