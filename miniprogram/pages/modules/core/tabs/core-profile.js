@@ -24,6 +24,10 @@ Component(mixin.component({
       let imgs = this.data.imgs
       console.log(i, imgs[i])
       this.preview.open(imgs, imgs[i])
+    },
+    on2webview(e) {
+      let url = e.currentTarget.dataset.url
+      util.go('core-webview-index', { url })
     }
   },
   ready() {

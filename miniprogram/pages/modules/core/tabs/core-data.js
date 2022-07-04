@@ -80,7 +80,7 @@ Component(mixin.component({
       let [index, idx] = e.currentTarget.dataset.i.split('_')
       let item = this.data.series[index].subs[idx]
       console.log(item)
-      util.navNext('core-car-cat')
+      util.go('core-car-cat')
       this.hideSide()
     },
     showSide() {

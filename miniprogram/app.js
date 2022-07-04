@@ -27,7 +27,7 @@ App({
       let lastPageCtx = util.unsave(conf.KEY_PAGE_CTX) || {}
       console.log('【测试支持】 自动跳转: ', lastPageCtx)
       if (lastPageCtx.path && lastPageCtx.path != '/pages/index/index') {
-        util.navNext.timeout(1000, this)(lastPageCtx.path, lastPageCtx.options)
+        util.go.timeout(1000, this)(lastPageCtx.path, lastPageCtx.options)
       }
     }
     // 

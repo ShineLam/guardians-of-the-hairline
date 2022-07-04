@@ -317,7 +317,7 @@ const checkTabpageParams = (params, cb) => {
 }
 
 // 页面跳转(method=2时使用redirectTo方式)
-const navNext = (path, params, method, cb, fb) => {
+const go = (path, params, method, cb, fb) => {
   path = fullPagepath(path)
   console.log(path)
   const wxparams = {
@@ -384,7 +384,7 @@ const navIndex = (params) => {
     }
   }
   if (delta != -1) {
-    navNext(path, params)
+    go(path, params)
   } else {
     navBack(delta)
   }
@@ -713,7 +713,7 @@ module.exports = {
   fullPagepath,
   serialize,
   navBack,
-  navNext,
+  go,
   navIndex,
   checkWexSession,
   callonefn,

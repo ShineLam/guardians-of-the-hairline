@@ -34,11 +34,11 @@ Component({
     onNav(e) {
       let i = e.currentTarget.dataset.i
       let itm = this.data.nav[i]
-      itm.id == 'index' ? util.navNext('/pages/index/index') : util.navNext('tab-home', { tabarId: itm.id })
+      itm.id == 'index' ? util.go('/pages/index/index') : util.go('tab-home', { tabarId: itm.id })
       this.toggle('showSidebar')
     },
     onSuper () {
-      util.navNext('super-home-index')
+      util.go('super-home-index')
     }
   }
 })

@@ -5,6 +5,7 @@
     "pages/tabs/profile/tab-profile",
     "pages/tabs/data/tab-data",
     "pages/modules/core/prod/core-prod-index",
+    "pages/modules/core/webview/core-webview-index",
     "pages/getOpenId/index",
     "pages/getMiniProgramCode/index",
     "pages/deployService/index",
