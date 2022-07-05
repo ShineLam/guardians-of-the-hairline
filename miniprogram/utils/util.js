@@ -411,7 +411,8 @@ const getWexUserInfo = (opts, cb, fb) => {
   wx.getSetting({
     success: function (setting) {
       console.log('【用户信息】 获取配置成功: ', setting)
-      wx.getUserInfo({
+      // 此接口即将废除
+      wx.getUserProfile({
         withCredentials: true,
         success: function (authInfo) {
           console.log('【用户信息】 获取授权信息成功: ', authInfo)
