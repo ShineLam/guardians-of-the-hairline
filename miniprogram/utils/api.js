@@ -494,16 +494,16 @@ const sendUserAuthInfoEx = (wexUserInfo, cb, fb) => {
 // 获取用户信息
 const getUserProfile = (force, cb, fb) => {
   let user = getGlobal('user')
-  // 不管三七二十一，只要存在用户信息，则先回调通知
+  // 只要存在用户信息，则先回调通知
   if (!force && user && user.id) {
     cb && cb(Object.assign({}, user))
   } else if (force || !user || !user.id) {
     // 是否需要重新加载
-    api.isPtuser({}, ok => {
-      let user = ok.data || {}
-      setGlobal('user', user)
-      cb && cb(Object.assign({}, user))
-    }, fb)
+    // api.isUser({}, ok => {
+    //   let user = ok.data || {}
+    //   setGlobal('user', user)
+    //   cb && cb(Object.assign({}, user))
+    // }, fb)
   }
 }
 
