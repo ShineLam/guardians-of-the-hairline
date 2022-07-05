@@ -22,7 +22,6 @@ Component(mixin.component({
     opnPreview(e) {
       let i = e.currentTarget.dataset.i
       let imgs = this.data.imgs
-      console.log(i, imgs[i])
       this.preview.open(imgs, imgs[i])
     },
     on2webview(e) {

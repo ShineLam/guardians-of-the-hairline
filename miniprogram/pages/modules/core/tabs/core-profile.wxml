@@ -9,8 +9,8 @@
 <view class="qrcode-video fx jc-cnt">
   <image src="{{f.imgpath('ico-dy')}}" data-i="0" bindtap="opnPreview"></image>
   <image src="{{f.imgpath('ico-wv')}}" data-i="1" bindtap="opnPreview"></image>
-  <image src="{{f.imgpath('ico-blog')}}" data-url="https://shinelam.github.io/ethan-blog/" bindtap="on2webview"></image>
-  <image src="{{f.imgpath('ico-github')}}" data-url="https://github.com/ShineLam" bindtap="on2webview"></image>
+  <image src="{{f.imgpath('ico-blog')}}" data-i="2" bindtap="opnPreview"></image>
+  <image src="{{f.imgpath('ico-github')}}" data-i="3" bindtap="opnPreview"></image>
 </view>
 
 <preview id="preview"></preview>
