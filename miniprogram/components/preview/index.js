@@ -14,7 +14,7 @@ Component(mixin.component({
     open(urls, current) {
       if (!util.isEmpty(urls)) {
         urls = this.mapUrls(urls)
-        wx.previewImage({ urls, current })
+        wx.previewImage({ urls, current, showmenu: true })
       } else {
         util.toast('请传入预览的图片')
       }

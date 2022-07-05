@@ -12,7 +12,6 @@ const nav = [
   { title: 'cpns', ico: 'ico-cpns', methods: 'open', params: {} }
 ]
 
-
 Component(mixin.component({
   options: {
     styleIsolation: 'apply-shared'

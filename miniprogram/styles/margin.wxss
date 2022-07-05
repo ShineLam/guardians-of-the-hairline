@@ -20,6 +20,11 @@
   padding-bottom: 32rpx;
 }
 
+.ptb-40 {
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
 .plr-16 {
   padding-left: 16rpx;
   padding-right: 16rpx;

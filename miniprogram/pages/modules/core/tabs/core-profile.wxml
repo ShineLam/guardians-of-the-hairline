@@ -1,6 +1,6 @@
 <wxs src="../../../../filters/core.wxs" module="f" />
 
-<view class="fx fd-cl jc-cnt">
+<view class="fx fd-cl jc-cnt ptb-40 plr-40">
   <view class="avatar">
     <image class="img" src="{{f.imgpath('avatar')}}"></image>
   </view>
