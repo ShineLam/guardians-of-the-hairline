@@ -7,9 +7,9 @@ const nav = [
   { title: 'plate-keybod', ico: 'ico-k-plate', methods: 'open', params: {} },
   { title: 'num-keybod', ico: 'ico-k-num', methods: 'open', params: { type: 'dot' }, cb: 'numCb' },
   { title: 'calc-keybod', ico: 'ico-k-calc', methods: 'open', params: { str: 1000 }, cb: 'calcCb' },
+  { title: 'cpns', ico: 'ico-cpns', methods: 'open', params: {} }
   { title: 'mbl-valid', ico: 'ico-phone', methods: 'open', params: {} },
   // { title: 'user-auth', ico: 'ico-auth', methods: 'open', params: {} },
-  { title: 'cpns', ico: 'ico-cpns', methods: 'open', params: {} }
 ]
 
 Component(mixin.component({
